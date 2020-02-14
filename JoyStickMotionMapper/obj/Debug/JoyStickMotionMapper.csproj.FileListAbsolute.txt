@@ -1,0 +1,37 @@
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\JoyStickMotionMapper.exe.config
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\JoyStickMotionMapper.exe
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\JoyStickMotionMapper.pdb
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\SharpDX.DirectInput.dll
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\SharpDX.dll
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\SharpDX.pdb
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\SharpDX.DirectInput.pdb
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\SharpDX.DirectInput.xml
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.csprojAssemblyReference.cache
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.Form1.resources
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.Properties.Resources.resources
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.csproj.GenerateResource.cache
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.csproj.CoreCompileInputs.cache
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.csproj.CopyComplete
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.exe
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.pdb
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Angelo's Tower PC\source\repos\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.Resources.EnglishText.resources
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\JoyStickMotionMapper.exe.config
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\JoyStickMotionMapper.exe
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\JoyStickMotionMapper.pdb
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\SharpDX.DirectInput.dll
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\SharpDX.dll
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\SharpDX.pdb
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\SharpDX.DirectInput.pdb
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\bin\Debug\SharpDX.DirectInput.xml
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.csprojAssemblyReference.cache
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.Form1.resources
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.Properties.Resources.resources
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.Resources.EnglishText.resources
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.csproj.GenerateResource.cache
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.csproj.CopyComplete
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.exe
+C:\Users\sovie\Desktop\JoyStickMotionMapper\JoyStickMotionMapper\obj\Debug\JoyStickMotionMapper.pdb

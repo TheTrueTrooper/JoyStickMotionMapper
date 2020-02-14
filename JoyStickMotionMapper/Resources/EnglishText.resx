@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Exception_CantFindLastConfigException" xml:space="preserve">
+    <value>A usable last use config could not be found. Reverting to default values. Please fill in as required and a last config will be made on exit for next time.</value>
+  </data>
+  <data name="Exception_CantFindUsableConfigException" xml:space="preserve">
+    <value>A usable config could not be found. Reverting to default values. Please fill in as required and a last config will be made on exit for next time.</value>
+  </data>
+  <data name="Exception_FileDoesentExistException" xml:space="preserve">
+    <value>That path doesnt exist.</value>
+  </data>
+  <data name="Exception_GenaricOppsException" xml:space="preserve">
+    <value>Opps, Something went wrong!</value>
+  </data>
+  <data name="HelpMessage_GameLaunchCatchErrorHelpMessage" xml:space="preserve">
+    <value>Oops, unable to find process. Please run the process independently and find the desired process in the Task Manager. Time out was </value>
+  </data>
+  <data name="HelpMessage_GameLaunchErrorHelpMessage" xml:space="preserve">
+    <value>Oops, game failed to launch.\nPlease contact your IT with this exception for help.</value>
+  </data>
+  <data name="HelpMessage_GameNotFoundHelpMessage" xml:space="preserve">
+    <value>Game file could not be found. Please check the game path before retrying.</value>
+  </data>
+  <data name="HelpMessage_RunJoyStickNotSelectedMessage" xml:space="preserve">
+    <value>Joystcik wasn't selected. Please check your joystick selection before retrying.</value>
+  </data>
+  <data name="HelpMessage_RunOutputErrorPathMessage" xml:space="preserve">
+    <value>Unable to locate the folder for the output to be saved to. Please check your output path before retrying.</value>
+  </data>
+  <data name="HelpMessage_RunProtocolNotSelectedMessage" xml:space="preserve">
+    <value>Protocol wasn't selected. Please check your protocol selection before retrying.</value>
+  </data>
+  <data name="Help_ProtocolConnectionStringHelp" xml:space="preserve">
+    <value>About
+This is a place to place any of the required information for your motions communication protocol.
+
+Note
+Every protocol is different so please defer to the protocols section here for any required help.
+
+Supported Protocols
+  1.Com Port (RS-232)
+      About
+        RS-232 is the protocol layed out on com ports. It is a smiple bi-directional with one line in and out one line in protocol for communication. It is based on based on electrical signal timings or buads.
+      Help
+        Simply insure the com port is connected on the machine. Then go to the device manager to see the connected com ports and note the name of the one that you would like (With virtual coms created by usb adapters you may need to test to see). Then simply type in the one you desire. 
+      Example String
+        "Com1"</value>
+  </data>
+  <data name="Help_RuntimeProcessNameHelp" xml:space="preserve">
+    <value>About
+This is for games that start and change the process under which they run.
+
+How To
+Simply find the process name that is resulting from the start of the game in the task manager after starting it with out this system.
+
+Note
+If the process is left blank it will assume that the process is the directly started process from the exe.</value>
+  </data>
+  <data name="Help_StartOptionsInputHelp" xml:space="preserve">
+    <value>About
+This is adding input after the game starts for any required start input.
+
+How To
+Simply add the below commands as nessary with spaces in the middle.
+
+Supported Commands
+wait(miliseconds) &lt;&lt; Waits a desired number of miliseconds before the next command 
+leftmouseclickdown(x,y) &lt;&lt; Sends a left mouse click (down) message to the other window as input at the x and y
+leftmouseclickup(x,y) &lt;&lt; Sends a left mouse click (up) message to the other window as input at the x and y
+keydown(sting) &lt;&lt; Sends a left keypress (down) message to the other window as input
+keyup(sting) &lt;&lt; Sends a left keypress (up) message to the other window as input
+
+Example
+"Wait(3000) keydown(space) Wait(300) keyup(space)" &lt;&lt; Set the commands to give to the other program as input.
+
+ReconizedKeys
+0-9 keys as thier char value
+A-Z keys as thier char value
+,./;'[]-= keys as thier char value
+shift for input == "shift"
+tab for input == "tab"
+control for input == "control"
+enter for input == "enter"
+space for input == "space"
+alt for input == "alt"</value>
+  </data>
+  <data name="Help_StartOptionsRunArgsHelp" xml:space="preserve">
+    <value>About
+This is a place to place any of the required (command line or shortcut or otherwhise) start options you may need.
+
+Note
+Every process is different so please defer to the process's documention for any required help.</value>
+  </data>
+</root>

@@ -728,7 +728,7 @@
             this.TaCo_MachinesSuportedForProtocol.Name = "TaCo_MachinesSuportedForProtocol";
             this.TaCo_MachinesSuportedForProtocol.SelectedIndex = 0;
             this.TaCo_MachinesSuportedForProtocol.Size = new System.Drawing.Size(392, 314);
-            this.TaCo_MachinesSuportedForProtocol.TabIndex = 2;
+            this.TaCo_MachinesSuportedForProtocol.TabIndex = 3;
             // 
             // TaPa_XYZ3Cyl
             // 

@@ -1090,6 +1090,12 @@ namespace JoyStickMotionMapper
                                 if (TaCo_MachinesSuportedForProtocol.SelectedIndex == 1)
 
                                     Player = new XYZ3CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
+
+                                else if (TaCo_MachinesSuportedForProtocol.SelectedIndex == 2)
+                                    Player = new X1CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
+
+                                else
+                                    Player = new XY2CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
                             }
                             catch (Exception ex)
                             {
@@ -1222,7 +1228,7 @@ namespace JoyStickMotionMapper
 
         private void CoBo_XY2Cyl_JoyAxisForMechXAxisTilt_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechXAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger)
+            SelectDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechXAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger);
         }
 
         private void CoBo_XY2Cyl_JoyAxisForMechYAxisTilt_DropDown(object sender, EventArgs e)
@@ -1232,7 +1238,7 @@ namespace JoyStickMotionMapper
 
         private void CoBo_XY2Cyl_JoyAxisForMechYAxisTilt_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechYAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger)
+            SelectDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechYAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger);
         }
 
         private void CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect_DropDownClosed(object sender, EventArgs e)
@@ -1242,7 +1248,8 @@ namespace JoyStickMotionMapper
 
         private void CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect_DropDown(object sender, EventArgs e)
         {
-            AddButtonsToComboBox(CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect); }
+            AddButtonsToComboBox(CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect); 
+        }
 
         private void CoBo_XY2Cyl_JoyAxisForMechSensitivity_DropDown(object sender, EventArgs e)
         {
@@ -1258,6 +1265,7 @@ namespace JoyStickMotionMapper
         {
             AddButtonsToComboBox(CoBo_XY2Cyl_JoyButtonForEndTrigger);
         }
+
         private void CoBo_XY2Cyl_JoyButtonForEndTrigger_DropDownClosed(object sender, EventArgs e)
         {
             SelectDeviceInfo(CoBo_XY2Cyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);

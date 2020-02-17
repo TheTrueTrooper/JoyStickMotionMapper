@@ -1165,17 +1165,6 @@ namespace JoyStickMotionMapper
             SelectDeviceInfo(CoBo_X1Cyl_JoyAxisForMechXAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger);
         }
 
-        private void La_JoyButtonForMechSytheticNoiseEffect_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void TaPa_X1Cyl_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect_DropDown(object sender, EventArgs e)
         {
             AddButtonsToComboBox(CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect);
@@ -1204,21 +1193,6 @@ namespace JoyStickMotionMapper
         private void CoBo_X1Cyl_JoyButtonForEndTrigger_DropDownClosed(object sender, EventArgs e)
         {
             SelectDeviceInfo(CoBo_X1Cyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);
-        }
-
-        private void TaPa_XYZ3Cyl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TaPa_XYCyl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void CoBo_XY2Cyl_JoyAxisForMechXAxisTilt_DropDown(object sender, EventArgs e)

@@ -720,9 +720,9 @@
             // 
             // TaCo_MachinesSuportedForProtocol
             // 
-            this.TaCo_MachinesSuportedForProtocol.Controls.Add(this.TaPa_XYZ3Cyl);
             this.TaCo_MachinesSuportedForProtocol.Controls.Add(this.TaPa_X1Cyl);
             this.TaCo_MachinesSuportedForProtocol.Controls.Add(this.TaPa_XY2Cyl);
+            this.TaCo_MachinesSuportedForProtocol.Controls.Add(this.TaPa_XYZ3Cyl);
             this.TaCo_MachinesSuportedForProtocol.Enabled = false;
             this.TaCo_MachinesSuportedForProtocol.Location = new System.Drawing.Point(6, 174);
             this.TaCo_MachinesSuportedForProtocol.Name = "TaCo_MachinesSuportedForProtocol";
@@ -1129,7 +1129,6 @@
             this.La_JoyButtonForMechSytheticNoiseEffect.Size = new System.Drawing.Size(207, 13);
             this.La_JoyButtonForMechSytheticNoiseEffect.TabIndex = 46;
             this.La_JoyButtonForMechSytheticNoiseEffect.Text = "Joy Button For Mech Sythetic Noise Effect";
-            this.La_JoyButtonForMechSytheticNoiseEffect.Click += new System.EventHandler(this.La_JoyButtonForMechSytheticNoiseEffect_Click);
             // 
             // CoBo_JoyButtonForMechSytheticNoiseEffect
             // 
@@ -1390,7 +1389,6 @@
             this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Size = new System.Drawing.Size(142, 13);
             this.La_XY2Cyl_JoyAxisForMechXAxisTilt.TabIndex = 46;
             this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Text = "Joy Axis For Mech X Axis Tilt";
-            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Click += new System.EventHandler(this.label4_Click);
             // 
             // CoBo_XY2Cyl_JoyAxisForMechXAxisTilt
             // 

@@ -15,6 +15,18 @@ namespace JoyStickMotionMapper.MotionControllers
 {
     abstract class BaseMotionController
     {
+        protected Random RandomNumber = new Random();
+
+        internal bool AddSytheticNoiseEffect = false;
+
+        protected const int SytheticNoiseEffectBaseValue = 10;
+        protected int SytheticNoiseEffectBaseHalfValue = SytheticNoiseEffectBaseValue / 2;
+
+        internal int Sensitivity { get; set; }
+
+        protected float SensitivtyCalc = 0.25f;
+
+
         internal string SavePath;
 
         internal List<MomentaryPositionAndTimingFrameDataModel> AddedMotion;
@@ -23,7 +35,7 @@ namespace JoyStickMotionMapper.MotionControllers
         protected const int POVOffsetOffset = 24;
         protected const int OtherAxisOffsetOffset = 8;
 
-        protected Form1 Owner;
+        protected TaPa_XYCyl Owner;
 
         public object LockObj { protected set; get; } = new object();
 
@@ -86,7 +98,7 @@ namespace JoyStickMotionMapper.MotionControllers
                     JoyButtonForEnd;
 #pragma warning restore CS0649
 
-        internal BaseMotionController(Form1 Owner)
+        internal BaseMotionController(TaPa_XYCyl Owner)
         {
             this.Owner = Owner;
         }
@@ -234,6 +246,8 @@ namespace JoyStickMotionMapper.MotionControllers
 
         protected abstract void SetCylinders();
 
+        protected abstract void SetCylinders(MomentaryPositionAndTimingFrameDataModel DataFrame);
+
         protected abstract void ResetCylinders();
 
         internal virtual void Start()
@@ -273,5 +287,106 @@ namespace JoyStickMotionMapper.MotionControllers
         }
 
         protected abstract void Tick();
+
+        protected virtual byte ClampCast(int Value)
+        {
+            if (Value < 0)
+                return 0;
+            if (Value > 255)
+                return 255;
+            return Convert.ToByte(Value);
+        }
+
+        protected virtual byte ClampCast(float Value)
+        {
+            if (Value < 0)
+                return 0;
+            if (Value > 255)
+                return 255;
+            return Convert.ToByte(Value);
+        }
+
+        protected virtual void DoButtons(JoystickUpdate[] Data, ref MomentaryPositionAndTimingFrameDataModel DataFrame)
+        {
+            DataFrame.Back = AddedMotion.Count() > 0 ? AddedMotion.Last().Back : false;
+            DataFrame.Bubbles = AddedMotion.Count() > 0 ? AddedMotion.Last().Bubbles : false;
+            DataFrame.Flame = AddedMotion.Count() > 0 ? AddedMotion.Last().Flame : false;
+            DataFrame.Jet = AddedMotion.Count() > 0 ? AddedMotion.Last().Jet : false;
+            DataFrame.Lightning = AddedMotion.Count() > 0 ? AddedMotion.Last().Lightning : false;
+            DataFrame.Rain = AddedMotion.Count() > 0 ? AddedMotion.Last().Rain : false;
+            DataFrame.Smoke = AddedMotion.Count() > 0 ? AddedMotion.Last().Smoke : false;
+            DataFrame.Snowflakes = AddedMotion.Count() > 0 ? AddedMotion.Last().Snowflakes : false;
+            DataFrame.Spare1 = AddedMotion.Count() > 0 ? AddedMotion.Last().Spare1 : false;
+            DataFrame.Spare2 = AddedMotion.Count() > 0 ? AddedMotion.Last().Spare2 : false;
+            DataFrame.Spare3 = AddedMotion.Count() > 0 ? AddedMotion.Last().Spare3 : false;
+            DataFrame.SweepingLegs1 = AddedMotion.Count() > 0 ? AddedMotion.Last().SweepingLegs1 : false;
+            DataFrame.SweepingLegs2 = AddedMotion.Count() > 0 ? AddedMotion.Last().SweepingLegs2 : false;
+            DataFrame.Vibration = AddedMotion.Count() > 0 ? AddedMotion.Last().Vibration : false;
+            DataFrame.WaterSpray = AddedMotion.Count() > 0 ? AddedMotion.Last().WaterSpray : false;
+            DataFrame.Wind = AddedMotion.Count() > 0 ? AddedMotion.Last().Wind : false;
+
+            int Num = 0;
+            foreach (DeviceObjectInstance Button in Owner.ButtonInfos)
+            {
+                if (Data.Any(x => x.RawOffset == Button.Offset + ButtonsOffsetOffset))
+                    Buttons[Num] = Data.Last(x => x.RawOffset == Button.Offset + ButtonsOffsetOffset).Value != 0 ? true : false;
+
+                if (Button == JoyButtonForMechBackStateTrigger && Buttons[Num])
+                    DataFrame.Back = !DataFrame.Back;
+
+                if (Button == JoyButtonForMechBubblesStateTrigger && Buttons[Num])
+                    DataFrame.Bubbles = !DataFrame.Bubbles;
+
+                if (Button == JoyButtonForMechFlameStateTrigger && Buttons[Num])
+                    DataFrame.Flame = !DataFrame.Flame;
+
+                if (Button == JoyButtonForMechJetStateTrigger && Buttons[Num])
+                    DataFrame.Jet = !DataFrame.Jet;
+
+                if (Button == JoyButtonForMechLightningStateTrigger && Buttons[Num])
+                    DataFrame.Lightning = !DataFrame.Lightning;
+
+                if (Button == JoyButtonForMechRainStateTrigger && Buttons[Num])
+                    DataFrame.Rain = !DataFrame.Rain;
+
+                if (Button == JoyButtonForMechSmokeStateTrigger && Buttons[Num])
+                    DataFrame.Smoke = !DataFrame.Smoke;
+
+                if (Button == JoyButtonForMechSnowflakeStateTrigger && Buttons[Num])
+                    DataFrame.Snowflakes = !DataFrame.Snowflakes;
+
+                if (Button == JoyButtonForMechSpare1StateTrigger && Buttons[Num])
+                    DataFrame.Spare1 = !DataFrame.Spare1;
+
+                if (Button == JoyButtonForMechSpare2StateTrigger && Buttons[Num])
+                    DataFrame.Spare2 = !DataFrame.Spare2;
+
+                if (Button == JoyButtonForMechSpare3StateTrigger && Buttons[Num])
+                    DataFrame.Spare3 = !DataFrame.Spare3;
+
+                if (Button == JoyButtonForMechSweepingLegs1StateTrigger && Buttons[Num])
+                    DataFrame.SweepingLegs1 = !DataFrame.SweepingLegs1;
+
+                if (Button == JoyButtonForMechSweepingLegs2StateTrigger && Buttons[Num])
+                    DataFrame.SweepingLegs2 = !DataFrame.SweepingLegs2;
+
+                if (Button == JoyButtonForMechVibrationStateTrigger && Buttons[Num])
+                    DataFrame.Vibration = !DataFrame.Vibration;
+
+                if (Button == JoyButtonForMechWaterSprayStateTrigger && Buttons[Num])
+                    DataFrame.WaterSpray = !DataFrame.WaterSpray;
+
+                if (Button == JoyButtonForMechWindStateTrigger && Buttons[Num])
+                    DataFrame.Wind = !DataFrame.Wind;
+
+                if (Button == JoyButtonForMechSytheticNoiseEffect && Buttons[Num])
+                    AddSytheticNoiseEffect = !AddSytheticNoiseEffect;
+
+                if (Button == JoyButtonForEnd && Buttons[Num])
+                    Task.Run(() => Owner.CaptureEnd.Invoke());
+
+                Num++;
+            }
+        }
     }
 }

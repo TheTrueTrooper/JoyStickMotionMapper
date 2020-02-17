@@ -10,13 +10,7 @@ namespace JoyStickMotionMapper.MotionPlayer
 {
     class XYZ3CylMotionPlayer : BaseMotionPlayer
     {
-        internal XYZ3CylMotionPlayer(Form1 Owner, string MotionDataPath, string GamePath, string StartOptionsRunArgs, string RuntimeProcess, string StartOptionsInput, AvalibleProtocols MotionDeviceProtocol, string ConnectonString) : base (Owner, MotionDataPath, GamePath, StartOptionsRunArgs, RuntimeProcess, StartOptionsInput, MotionDeviceProtocol, ConnectonString)
-        {
-
-
-        }
-
-
+        internal XYZ3CylMotionPlayer(TaPa_XYCyl Owner, string MotionDataPath, string GamePath, string StartOptionsRunArgs, string RuntimeProcess, string StartOptionsInput, AvalibleProtocols MotionDeviceProtocol, string ConnectonString) : base (Owner, MotionDataPath, GamePath, StartOptionsRunArgs, RuntimeProcess, StartOptionsInput, MotionDeviceProtocol, ConnectonString){}
 
         protected override void AnimateFame(MomentaryPositionAndTimingFrameDataModel Data)
         {

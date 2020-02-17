@@ -65,9 +65,13 @@
     <Compile Include="ConfigHelper\SystemConfig.cs" />
     <Compile Include="ComMotionSystem\JMDM_CylinderPortControlUpdated.cs" />
     <Compile Include="MotionControllers\BaseMotionController.cs" />
+    <Compile Include="MotionControllers\XY2CylMotionController.cs" />
+    <Compile Include="MotionControllers\X1CylMotionController.cs" />
     <Compile Include="MotionControllers\XYZ3CylMotionController.cs" />
     <Compile Include="MotionHardwareInterface\IMotionHardwareInterface.cs" />
     <Compile Include="MotionPlayer\BaseMotionPlayer.cs" />
+    <Compile Include="MotionPlayer\XY2CylMotionPlayer.cs" />
+    <Compile Include="MotionPlayer\X1CylMotionPlayer.cs" />
     <Compile Include="MotionPlayer\XYZ3CylMotionPlayer.cs" />
     <Compile Include="_KeyNotes.cs" />
     <Compile Include="TimingData\MomentaryPositionAndTimingFrameDataModel.cs" />

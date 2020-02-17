@@ -22,7 +22,7 @@ using JoyStickMotionMapper.MotionPlayer;
 
 namespace JoyStickMotionMapper
 {
-    public partial class Form1 : Form
+    public partial class TaPa_XYCyl : Form
     {
 
         #region ConfigVars
@@ -69,7 +69,7 @@ namespace JoyStickMotionMapper
 
         string RunErrors;
 
-        public Form1()
+        public TaPa_XYCyl()
         {
             InitializeComponent();
             PlayBacksEnd += PlayBacksEndFunk;
@@ -112,7 +112,7 @@ namespace JoyStickMotionMapper
             const string StartingButton = "Not Pressed";
             const int StartingPOV = -1;
 
-            if(MotionController.JoyStick != null)
+            if (MotionController.JoyStick != null)
             {
                 JoyStickPollCycle.Enabled = false;
                 DeviceGUID = Guid.Empty;
@@ -150,7 +150,7 @@ namespace JoyStickMotionMapper
                 TeBo_POVCount.Text = MotionController.JoyStick.Capabilities.PovCount.ToString();
 
                 EffectInfos = MotionController.JoyStick.GetEffects().ToArray();
-                foreach(EffectInfo E in EffectInfos)
+                foreach (EffectInfo E in EffectInfos)
                 {
                     DaGrVi_Effects.Rows.Add(E.Name, E.Type.ToString(), E.Guid.ToString());
                 }
@@ -337,7 +337,7 @@ namespace JoyStickMotionMapper
                 TeBo_ProtocolConnectionString.Text = Config.ProtocolConnectionString;
                 TrBa_TimeBetweenTicks.Value = (int)Config.TimeBetweenTicksMS;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 if (RevertToDefault)
                 {
@@ -1022,41 +1022,41 @@ namespace JoyStickMotionMapper
         private void Bu_Run_MouseClick(object sender, MouseEventArgs e)
         {
             CheckForRunConditions();
-            if(RunErrors!=null)
+            if (RunErrors != null)
                 MessageBox.Show(RunErrors, "Not ready");
         }
 
         private void Bu_ViewSavedData_Click(object sender, EventArgs e)
         {
-            
-                using (OpenFileDialog GamePathDialog = new OpenFileDialog())
+
+            using (OpenFileDialog GamePathDialog = new OpenFileDialog())
+            {
+                GamePathDialog.Filter = "JMDM Move files (*.JMmov)|*.JMmov";//"JMDM Custom Move files (*.JMMov)|*.JMMov";
+                GamePathDialog.InitialDirectory = Path.GetDirectoryName(TeBo_MotionOutputPath.Text);
+                if (GamePathDialog.ShowDialog() == DialogResult.OK)
                 {
-                    GamePathDialog.Filter = "JMDM Move files (*.JMmov)|*.JMmov";//"JMDM Custom Move files (*.JMMov)|*.JMMov";
-                    GamePathDialog.InitialDirectory = Path.GetDirectoryName(TeBo_MotionOutputPath.Text);
-                    if (GamePathDialog.ShowDialog() == DialogResult.OK)
+                    if (File.Exists(GamePathDialog.FileName))
                     {
-                        if (File.Exists(GamePathDialog.FileName))
+                        try
                         {
-                            try
+                            Time = 0;
+                            PositionAndTimingDataModel Data = PositionAndTimingDataModel.DataLoadFromFile(GamePathDialog.FileName);
+                            foreach (MomentaryPositionAndTimingFrameDataModel DataFrame in Data)
                             {
-                                Time = 0;
-                                PositionAndTimingDataModel Data = PositionAndTimingDataModel.DataLoadFromFile(GamePathDialog.FileName);
-                                foreach (MomentaryPositionAndTimingFrameDataModel DataFrame in Data)
-                                {
-                                    Time += DataFrame.Time;
-                                    DaGrVi_DataOutput.Rows.Add(Time, DataFrame.Time, DataFrame.C1, DataFrame.C2, DataFrame.C3, DataFrame.C4, DataFrame.C5, DataFrame.C6, DataFrame.Snowflakes, DataFrame.Wind, DataFrame.Rain, DataFrame.Smoke, DataFrame.Bubbles, DataFrame.Lightning, DataFrame.Flame, DataFrame.Jet, DataFrame.WaterSpray, DataFrame.Vibration, DataFrame.Back, DataFrame.SweepingLegs1, DataFrame.SweepingLegs2, DataFrame.Spare1, DataFrame.Spare2, DataFrame.Spare3);
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show($"{EnglishText.Exception_GenaricOppsException}\n{ex}");
+                                Time += DataFrame.Time;
+                                DaGrVi_DataOutput.Rows.Add(Time, DataFrame.Time, DataFrame.C1, DataFrame.C2, DataFrame.C3, DataFrame.C4, DataFrame.C5, DataFrame.C6, DataFrame.Snowflakes, DataFrame.Wind, DataFrame.Rain, DataFrame.Smoke, DataFrame.Bubbles, DataFrame.Lightning, DataFrame.Flame, DataFrame.Jet, DataFrame.WaterSpray, DataFrame.Vibration, DataFrame.Back, DataFrame.SweepingLegs1, DataFrame.SweepingLegs2, DataFrame.Spare1, DataFrame.Spare2, DataFrame.Spare3);
                             }
                         }
-                        else
-                            MessageBox.Show(EnglishText.Exception_FileDoesentExistException);
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"{EnglishText.Exception_GenaricOppsException}\n{ex}");
+                        }
                     }
-
+                    else
+                        MessageBox.Show(EnglishText.Exception_FileDoesentExistException);
                 }
+
+            }
         }
 
         private void TrBa_TimeBetweenTicks_Scroll(object sender, EventArgs e)
@@ -1087,7 +1087,9 @@ namespace JoyStickMotionMapper
 
                             try
                             {
-                                Player = new XYZ3CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
+                                if (TaCo_MachinesSuportedForProtocol.SelectedIndex == 1)
+
+                                    Player = new XYZ3CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
                             }
                             catch (Exception ex)
                             {
@@ -1130,5 +1132,137 @@ namespace JoyStickMotionMapper
             }));
         }
 
-    }
+        void SelectDeviceInfo(ComboBox TargetBox, ref DeviceObjectInstance TargetDeviceInfo)
+        {
+            if (TargetBox.SelectedIndex != -1)
+                TargetDeviceInfo = ButtonInfos[TargetBox.SelectedIndex];
+            else
+                TargetDeviceInfo = null;
+        }
+
+        private void TaCo_MachinesSuportedForProtocol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TaCo_MachinesSuportedForProtocol.SelectedIndex == 0)
+                MotionController = new XYZ3CylMotionController(this);
+            if (TaCo_MachinesSuportedForProtocol.SelectedIndex == 1)
+                MotionController = new XYZ3CylMotionController(this);
+
+        }
+
+        private void CoBo_X1Cyl_JoyAxisForMechXAxisTilt_DropDown(object sender, EventArgs e)
+        {
+            AddAxisToComboBox(CoBo_X1Cyl_JoyAxisForMechXAxisTilt);
+        }
+
+        private void CoBo_X1Cyl_JoyAxisForMechXAxisTilt_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectDeviceInfo(CoBo_X1Cyl_JoyAxisForMechXAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger);
+        }
+
+        private void La_JoyButtonForMechSytheticNoiseEffect_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void TaPa_X1Cyl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect_DropDown(object sender, EventArgs e)
+        {
+            AddButtonsToComboBox(CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect);
+        }
+
+        private void CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectDeviceInfo(CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect, ref MotionController.JoyButtonForMechSytheticNoiseEffect);
+        }
+
+        private void CoBo_X1Cyl_JoyAxisForMechSensitivity_DropDown(object sender, EventArgs e)
+        {
+            AddAxisToComboBox(CoBo_X1Cyl_JoyAxisForMechSensitivity);
+        }
+
+        private void CoBo_X1Cyl_JoyAxisForMechSensitivity_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectDeviceInfo(CoBo_X1Cyl_JoyAxisForMechSensitivity, ref MotionController.JoyAxisForMechSensitivity);
+        }
+
+        private void CoBo_X1Cyl_JoyButtonForEndTrigger_DropDown(object sender, EventArgs e)
+        {
+            AddButtonsToComboBox(CoBo_X1Cyl_JoyButtonForEndTrigger);
+        }
+
+        private void CoBo_X1Cyl_JoyButtonForEndTrigger_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectDeviceInfo(CoBo_X1Cyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);
+        }
+
+        private void TaPa_XYZ3Cyl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TaPa_XYCyl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CoBo_XY2Cyl_JoyAxisForMechXAxisTilt_DropDown(object sender, EventArgs e)
+        {
+            AddAxisToComboBox(CoBo_XY2Cyl_JoyAxisForMechXAxisTilt);
+        }
+
+        private void CoBo_XY2Cyl_JoyAxisForMechXAxisTilt_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechXAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger)
+        }
+
+        private void CoBo_XY2Cyl_JoyAxisForMechYAxisTilt_DropDown(object sender, EventArgs e)
+        {
+            AddAxisToComboBox(CoBo_XY2Cyl_JoyAxisForMechYAxisTilt);
+        }
+
+        private void CoBo_XY2Cyl_JoyAxisForMechYAxisTilt_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechYAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger)
+        }
+
+        private void CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectDeviceInfo(CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect, ref MotionController.JoyButtonForMechSytheticNoiseEffect);
+        }
+
+        private void CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect_DropDown(object sender, EventArgs e)
+        {
+            AddButtonsToComboBox(CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect); }
+
+        private void CoBo_XY2Cyl_JoyAxisForMechSensitivity_DropDown(object sender, EventArgs e)
+        {
+            AddAxisToComboBox(CoBo_XY2Cyl_JoyAxisForMechSensitivity);
+        }
+
+        private void CoBo_XY2Cyl_JoyAxisForMechSensitivity_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechSensitivity, ref MotionController.JoyAxisForMechSensitivity);
+        }
+
+        private void CoBo_XY2Cyl_JoyButtonForEndTrigger_DropDown(object sender, EventArgs e)
+        {
+            AddButtonsToComboBox(CoBo_XY2Cyl_JoyButtonForEndTrigger);
+        }
+        private void CoBo_XY2Cyl_JoyButtonForEndTrigger_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectDeviceInfo(CoBo_XY2Cyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);
+        }
+
+    } 
 }
+

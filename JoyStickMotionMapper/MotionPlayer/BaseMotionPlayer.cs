@@ -25,7 +25,7 @@ namespace JoyStickMotionMapper.MotionPlayer
 
         public object LockObj { protected set; get; } = new object();
 
-        Form1 Owner;
+        TaPa_XYCyl Owner;
 
         protected Stopwatch FrameTimer;
 
@@ -45,7 +45,7 @@ namespace JoyStickMotionMapper.MotionPlayer
 
         Process GameRunTime;
 
-        internal BaseMotionPlayer(Form1 Owner, string MotionDataPath, string GamePath, string StartOptionsRunArgs, string RuntimeProcess, string StartOptionsInput, AvalibleProtocols MotionDeviceProtocol, string ConnectonString)
+        internal BaseMotionPlayer(TaPa_XYCyl Owner, string MotionDataPath, string GamePath, string StartOptionsRunArgs, string RuntimeProcess, string StartOptionsInput, AvalibleProtocols MotionDeviceProtocol, string ConnectonString)
         {
             this.Owner = Owner;
             FrameData = PositionAndTimingDataModel.DataLoadFromFile(MotionDataPath);
@@ -171,7 +171,7 @@ namespace JoyStickMotionMapper.MotionPlayer
                 if (StartOptionsInput != null && StartOptionsInput != "")
                 {
                     Thread.Sleep(50);
-                    Action[] Commands = Form1.GetCommands(StartOptionsInput, Window);
+                    Action[] Commands = TaPa_XYCyl.GetCommands(StartOptionsInput, Window);
                     foreach (Action Command in Commands)
                     {
                         Command.Invoke();

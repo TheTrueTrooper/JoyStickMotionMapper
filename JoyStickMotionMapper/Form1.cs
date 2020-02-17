@@ -1151,10 +1151,18 @@ namespace JoyStickMotionMapper
             }));
         }
 
-        void SelectDeviceInfo(ComboBox TargetBox, ref DeviceObjectInstance TargetDeviceInfo)
+        void SelectButtonDeviceInfo(ComboBox TargetBox, ref DeviceObjectInstance TargetDeviceInfo)
         {
             if (TargetBox.SelectedIndex != -1)
                 TargetDeviceInfo = ButtonInfos[TargetBox.SelectedIndex];
+            else
+                TargetDeviceInfo = null;
+        }
+
+        void SelectAxisDeviceInfo(ComboBox TargetBox, ref DeviceObjectInstance TargetDeviceInfo)
+        {
+            if (TargetBox.SelectedIndex != -1)
+                TargetDeviceInfo = AxisInfos[TargetBox.SelectedIndex];
             else
                 TargetDeviceInfo = null;
         }
@@ -1202,7 +1210,7 @@ namespace JoyStickMotionMapper
 
         private void CoBo_X1Cyl_JoyAxisForMechXAxisTilt_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_X1Cyl_JoyAxisForMechXAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger);
+            SelectAxisDeviceInfo(CoBo_X1Cyl_JoyAxisForMechXAxisTilt, ref MotionController.JoyAxisForMechXAxisTilt);
         }
 
         private void CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect_DropDown(object sender, EventArgs e)
@@ -1212,7 +1220,7 @@ namespace JoyStickMotionMapper
 
         private void CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect, ref MotionController.JoyButtonForMechSytheticNoiseEffect);
+            SelectButtonDeviceInfo(CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect, ref MotionController.JoyButtonForMechSytheticNoiseEffect);
         }
 
         private void CoBo_X1Cyl_JoyAxisForMechSensitivity_DropDown(object sender, EventArgs e)
@@ -1222,7 +1230,7 @@ namespace JoyStickMotionMapper
 
         private void CoBo_X1Cyl_JoyAxisForMechSensitivity_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_X1Cyl_JoyAxisForMechSensitivity, ref MotionController.JoyAxisForMechSensitivity);
+            SelectAxisDeviceInfo(CoBo_X1Cyl_JoyAxisForMechSensitivity, ref MotionController.JoyAxisForMechSensitivity);
         }
 
         private void CoBo_X1Cyl_JoyButtonForEndTrigger_DropDown(object sender, EventArgs e)
@@ -1232,7 +1240,7 @@ namespace JoyStickMotionMapper
 
         private void CoBo_X1Cyl_JoyButtonForEndTrigger_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_X1Cyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);
+            SelectButtonDeviceInfo(CoBo_X1Cyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);
         }
 
         private void CoBo_XY2Cyl_JoyAxisForMechXAxisTilt_DropDown(object sender, EventArgs e)
@@ -1242,7 +1250,7 @@ namespace JoyStickMotionMapper
 
         private void CoBo_XY2Cyl_JoyAxisForMechXAxisTilt_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechXAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger);
+            SelectAxisDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechXAxisTilt, ref MotionController.JoyAxisForMechXAxisTilt);
         }
 
         private void CoBo_XY2Cyl_JoyAxisForMechYAxisTilt_DropDown(object sender, EventArgs e)
@@ -1252,12 +1260,12 @@ namespace JoyStickMotionMapper
 
         private void CoBo_XY2Cyl_JoyAxisForMechYAxisTilt_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechYAxisTilt, ref MotionController.JoyButtonForMechBubblesStateTrigger);
+            SelectAxisDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechYAxisTilt, ref MotionController.JoyAxisForMechYAxisTilt);
         }
 
         private void CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect, ref MotionController.JoyButtonForMechSytheticNoiseEffect);
+            SelectButtonDeviceInfo(CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect, ref MotionController.JoyButtonForMechSytheticNoiseEffect);
         }
 
         private void CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect_DropDown(object sender, EventArgs e)
@@ -1272,7 +1280,7 @@ namespace JoyStickMotionMapper
 
         private void CoBo_XY2Cyl_JoyAxisForMechSensitivity_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechSensitivity, ref MotionController.JoyAxisForMechSensitivity);
+            SelectAxisDeviceInfo(CoBo_XY2Cyl_JoyAxisForMechSensitivity, ref MotionController.JoyAxisForMechSensitivity);
         }
 
         private void CoBo_XY2Cyl_JoyButtonForEndTrigger_DropDown(object sender, EventArgs e)
@@ -1282,7 +1290,7 @@ namespace JoyStickMotionMapper
 
         private void CoBo_XY2Cyl_JoyButtonForEndTrigger_DropDownClosed(object sender, EventArgs e)
         {
-            SelectDeviceInfo(CoBo_XY2Cyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);
+            SelectButtonDeviceInfo(CoBo_XY2Cyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);
         }
     } 
 }

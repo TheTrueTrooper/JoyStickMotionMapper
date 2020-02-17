@@ -58,7 +58,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.La_Axis = new System.Windows.Forms.Label();
             this.La_Buttons = new System.Windows.Forms.Label();
-            this.JoyStickPollCycle = new System.Windows.Forms.Timer(this.components);
+            this.Ti_JoyStickPollCycle = new System.Windows.Forms.Timer(this.components);
             this.DaGrVi_POVs = new System.Windows.Forms.DataGridView();
             this.Col_POVs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +82,26 @@
             this.GrBo_MotionData = new System.Windows.Forms.GroupBox();
             this.La_MachinesSuportedForProtocol = new System.Windows.Forms.Label();
             this.TaCo_MachinesSuportedForProtocol = new System.Windows.Forms.TabControl();
+            this.TaPa_X1Cyl = new System.Windows.Forms.TabPage();
+            this.La_X1Cyl_JoyButtonForEndTrigger = new System.Windows.Forms.Label();
+            this.CoBo_X1Cyl_JoyButtonForEndTrigger = new System.Windows.Forms.ComboBox();
+            this.La_X1Cyl_JoyAxisForMechSensitivity = new System.Windows.Forms.Label();
+            this.CoBo_X1Cyl_JoyAxisForMechSensitivity = new System.Windows.Forms.ComboBox();
+            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect = new System.Windows.Forms.Label();
+            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect = new System.Windows.Forms.ComboBox();
+            this.La_X1Cyl_JoyAxisForMechXAxisTilt = new System.Windows.Forms.Label();
+            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt = new System.Windows.Forms.ComboBox();
+            this.TaPa_XY2Cyl = new System.Windows.Forms.TabPage();
+            this.La_XY2Cyl_JoyButtonForEndTrigger = new System.Windows.Forms.Label();
+            this.CoBo_XY2Cyl_JoyButtonForEndTrigger = new System.Windows.Forms.ComboBox();
+            this.La_XY2Cyl_JoyAxisForMechSensitivity = new System.Windows.Forms.Label();
+            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity = new System.Windows.Forms.ComboBox();
+            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect = new System.Windows.Forms.Label();
+            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect = new System.Windows.Forms.ComboBox();
+            this.La_XY2Cyl_JoyAxisForMechYAxisTilt = new System.Windows.Forms.Label();
+            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt = new System.Windows.Forms.ComboBox();
+            this.La_XY2Cyl_JoyAxisForMechXAxisTilt = new System.Windows.Forms.Label();
+            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt = new System.Windows.Forms.ComboBox();
             this.TaPa_XYZ3Cyl = new System.Windows.Forms.TabPage();
             this.La_JoyButtonForMechWaterSprayStateTrigger = new System.Windows.Forms.Label();
             this.CoBo_JoyButtonForMechWaterSprayStateTrigger = new System.Windows.Forms.ComboBox();
@@ -124,26 +144,6 @@
             this.La_JoyAxisForMechXAxisTilt = new System.Windows.Forms.Label();
             this.VScBa_3CylXYZ = new System.Windows.Forms.VScrollBar();
             this.CoBo_JoyAxisForMechXAxisTilt = new System.Windows.Forms.ComboBox();
-            this.TaPa_X1Cyl = new System.Windows.Forms.TabPage();
-            this.La_X1Cyl_JoyButtonForEndTrigger = new System.Windows.Forms.Label();
-            this.CoBo_X1Cyl_JoyButtonForEndTrigger = new System.Windows.Forms.ComboBox();
-            this.La_X1Cyl_JoyAxisForMechSensitivity = new System.Windows.Forms.Label();
-            this.CoBo_X1Cyl_JoyAxisForMechSensitivity = new System.Windows.Forms.ComboBox();
-            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect = new System.Windows.Forms.Label();
-            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect = new System.Windows.Forms.ComboBox();
-            this.La_X1Cyl_JoyAxisForMechXAxisTilt = new System.Windows.Forms.Label();
-            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt = new System.Windows.Forms.ComboBox();
-            this.TaPa_XY2Cyl = new System.Windows.Forms.TabPage();
-            this.La_XY2Cyl_JoyButtonForEndTrigger = new System.Windows.Forms.Label();
-            this.CoBo_XY2Cyl_JoyButtonForEndTrigger = new System.Windows.Forms.ComboBox();
-            this.La_XY2Cyl_JoyAxisForMechSensitivity = new System.Windows.Forms.Label();
-            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity = new System.Windows.Forms.ComboBox();
-            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect = new System.Windows.Forms.Label();
-            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect = new System.Windows.Forms.ComboBox();
-            this.La_XY2Cyl_JoyAxisForMechYAxisTilt = new System.Windows.Forms.Label();
-            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt = new System.Windows.Forms.ComboBox();
-            this.La_XY2Cyl_JoyAxisForMechXAxisTilt = new System.Windows.Forms.Label();
-            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt = new System.Windows.Forms.ComboBox();
             this.But_ProtocolConnectionStringHelp = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TeBo_ProtocolConnectionString = new System.Windows.Forms.TextBox();
@@ -196,9 +196,9 @@
             this.GrBo_Game.SuspendLayout();
             this.GrBo_MotionData.SuspendLayout();
             this.TaCo_MachinesSuportedForProtocol.SuspendLayout();
-            this.TaPa_XYZ3Cyl.SuspendLayout();
             this.TaPa_X1Cyl.SuspendLayout();
             this.TaPa_XY2Cyl.SuspendLayout();
+            this.TaPa_XYZ3Cyl.SuspendLayout();
             this.GrBo_RunTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DaGrVi_DataOutput)).BeginInit();
             this.GrBo_FrameData.SuspendLayout();
@@ -468,9 +468,9 @@
             this.La_Buttons.TabIndex = 21;
             this.La_Buttons.Text = "Buttons";
             // 
-            // JoyStickPollCycle
+            // Ti_JoyStickPollCycle
             // 
-            this.JoyStickPollCycle.Tick += new System.EventHandler(this.JoyStickPollCycle_Tick);
+            this.Ti_JoyStickPollCycle.Tick += new System.EventHandler(this.Ti_JoyStickPollCycle_Tick);
             // 
             // DaGrVi_POVs
             // 
@@ -729,6 +729,224 @@
             this.TaCo_MachinesSuportedForProtocol.SelectedIndex = 0;
             this.TaCo_MachinesSuportedForProtocol.Size = new System.Drawing.Size(392, 314);
             this.TaCo_MachinesSuportedForProtocol.TabIndex = 3;
+            this.TaCo_MachinesSuportedForProtocol.SelectedIndexChanged += new System.EventHandler(this.TaCo_MachinesSuportedForProtocol_SelectedIndexChanged);
+            // 
+            // TaPa_X1Cyl
+            // 
+            this.TaPa_X1Cyl.Controls.Add(this.La_X1Cyl_JoyButtonForEndTrigger);
+            this.TaPa_X1Cyl.Controls.Add(this.CoBo_X1Cyl_JoyButtonForEndTrigger);
+            this.TaPa_X1Cyl.Controls.Add(this.La_X1Cyl_JoyAxisForMechSensitivity);
+            this.TaPa_X1Cyl.Controls.Add(this.CoBo_X1Cyl_JoyAxisForMechSensitivity);
+            this.TaPa_X1Cyl.Controls.Add(this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect);
+            this.TaPa_X1Cyl.Controls.Add(this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect);
+            this.TaPa_X1Cyl.Controls.Add(this.La_X1Cyl_JoyAxisForMechXAxisTilt);
+            this.TaPa_X1Cyl.Controls.Add(this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt);
+            this.TaPa_X1Cyl.Location = new System.Drawing.Point(4, 22);
+            this.TaPa_X1Cyl.Name = "TaPa_X1Cyl";
+            this.TaPa_X1Cyl.Size = new System.Drawing.Size(384, 288);
+            this.TaPa_X1Cyl.TabIndex = 1;
+            this.TaPa_X1Cyl.Text = "X1Cyl";
+            this.TaPa_X1Cyl.UseVisualStyleBackColor = true;
+            // 
+            // La_X1Cyl_JoyButtonForEndTrigger
+            // 
+            this.La_X1Cyl_JoyButtonForEndTrigger.AutoSize = true;
+            this.La_X1Cyl_JoyButtonForEndTrigger.Location = new System.Drawing.Point(3, 174);
+            this.La_X1Cyl_JoyButtonForEndTrigger.Name = "La_X1Cyl_JoyButtonForEndTrigger";
+            this.La_X1Cyl_JoyButtonForEndTrigger.Size = new System.Drawing.Size(133, 13);
+            this.La_X1Cyl_JoyButtonForEndTrigger.TabIndex = 53;
+            this.La_X1Cyl_JoyButtonForEndTrigger.Text = "Joy Button For End Trigger";
+            // 
+            // CoBo_X1Cyl_JoyButtonForEndTrigger
+            // 
+            this.CoBo_X1Cyl_JoyButtonForEndTrigger.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CoBo_X1Cyl_JoyButtonForEndTrigger.FormattingEnabled = true;
+            this.CoBo_X1Cyl_JoyButtonForEndTrigger.Location = new System.Drawing.Point(6, 197);
+            this.CoBo_X1Cyl_JoyButtonForEndTrigger.Name = "CoBo_X1Cyl_JoyButtonForEndTrigger";
+            this.CoBo_X1Cyl_JoyButtonForEndTrigger.Size = new System.Drawing.Size(352, 21);
+            this.CoBo_X1Cyl_JoyButtonForEndTrigger.TabIndex = 52;
+            this.CoBo_X1Cyl_JoyButtonForEndTrigger.DropDown += new System.EventHandler(this.CoBo_X1Cyl_JoyButtonForEndTrigger_DropDown);
+            this.CoBo_X1Cyl_JoyButtonForEndTrigger.DropDownClosed += new System.EventHandler(this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect_DropDownClosed);
+            // 
+            // La_X1Cyl_JoyAxisForMechSensitivity
+            // 
+            this.La_X1Cyl_JoyAxisForMechSensitivity.AutoSize = true;
+            this.La_X1Cyl_JoyAxisForMechSensitivity.Location = new System.Drawing.Point(3, 113);
+            this.La_X1Cyl_JoyAxisForMechSensitivity.Name = "La_X1Cyl_JoyAxisForMechSensitivity";
+            this.La_X1Cyl_JoyAxisForMechSensitivity.Size = new System.Drawing.Size(143, 13);
+            this.La_X1Cyl_JoyAxisForMechSensitivity.TabIndex = 50;
+            this.La_X1Cyl_JoyAxisForMechSensitivity.Text = "Joy Axis For Mech Sensitivity";
+            // 
+            // CoBo_X1Cyl_JoyAxisForMechSensitivity
+            // 
+            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.FormattingEnabled = true;
+            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.Location = new System.Drawing.Point(6, 136);
+            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.Name = "CoBo_X1Cyl_JoyAxisForMechSensitivity";
+            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.Size = new System.Drawing.Size(355, 21);
+            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.TabIndex = 49;
+            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.DropDown += new System.EventHandler(this.CoBo_X1Cyl_JoyAxisForMechSensitivity_DropDown);
+            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.DropDownClosed += new System.EventHandler(this.CoBo_X1Cyl_JoyAxisForMechSensitivity_DropDownClosed);
+            // 
+            // La_X1Cyl_JoyButtonForMechSytheticNoiseEffect
+            // 
+            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.AutoSize = true;
+            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Location = new System.Drawing.Point(3, 62);
+            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Name = "La_X1Cyl_JoyButtonForMechSytheticNoiseEffect";
+            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Size = new System.Drawing.Size(207, 13);
+            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.TabIndex = 48;
+            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Text = "Joy Button For Mech Sythetic Noise Effect";
+            // 
+            // CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect
+            // 
+            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.FormattingEnabled = true;
+            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Location = new System.Drawing.Point(6, 85);
+            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Name = "CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect";
+            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Size = new System.Drawing.Size(355, 21);
+            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.TabIndex = 47;
+            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.DropDown += new System.EventHandler(this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect_DropDown);
+            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.DropDownClosed += new System.EventHandler(this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect_DropDownClosed);
+            // 
+            // La_X1Cyl_JoyAxisForMechXAxisTilt
+            // 
+            this.La_X1Cyl_JoyAxisForMechXAxisTilt.AutoSize = true;
+            this.La_X1Cyl_JoyAxisForMechXAxisTilt.Location = new System.Drawing.Point(3, 6);
+            this.La_X1Cyl_JoyAxisForMechXAxisTilt.Name = "La_X1Cyl_JoyAxisForMechXAxisTilt";
+            this.La_X1Cyl_JoyAxisForMechXAxisTilt.Size = new System.Drawing.Size(142, 13);
+            this.La_X1Cyl_JoyAxisForMechXAxisTilt.TabIndex = 44;
+            this.La_X1Cyl_JoyAxisForMechXAxisTilt.Text = "Joy Axis For Mech X Axis Tilt";
+            // 
+            // CoBo_X1Cyl_JoyAxisForMechXAxisTilt
+            // 
+            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.FormattingEnabled = true;
+            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.Location = new System.Drawing.Point(6, 29);
+            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.Name = "CoBo_X1Cyl_JoyAxisForMechXAxisTilt";
+            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.Size = new System.Drawing.Size(355, 21);
+            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.TabIndex = 43;
+            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.DropDown += new System.EventHandler(this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt_DropDown);
+            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.DropDownClosed += new System.EventHandler(this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt_DropDownClosed);
+            // 
+            // TaPa_XY2Cyl
+            // 
+            this.TaPa_XY2Cyl.Controls.Add(this.La_XY2Cyl_JoyButtonForEndTrigger);
+            this.TaPa_XY2Cyl.Controls.Add(this.CoBo_XY2Cyl_JoyButtonForEndTrigger);
+            this.TaPa_XY2Cyl.Controls.Add(this.La_XY2Cyl_JoyAxisForMechSensitivity);
+            this.TaPa_XY2Cyl.Controls.Add(this.CoBo_XY2Cyl_JoyAxisForMechSensitivity);
+            this.TaPa_XY2Cyl.Controls.Add(this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect);
+            this.TaPa_XY2Cyl.Controls.Add(this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect);
+            this.TaPa_XY2Cyl.Controls.Add(this.La_XY2Cyl_JoyAxisForMechYAxisTilt);
+            this.TaPa_XY2Cyl.Controls.Add(this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt);
+            this.TaPa_XY2Cyl.Controls.Add(this.La_XY2Cyl_JoyAxisForMechXAxisTilt);
+            this.TaPa_XY2Cyl.Controls.Add(this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt);
+            this.TaPa_XY2Cyl.Location = new System.Drawing.Point(4, 22);
+            this.TaPa_XY2Cyl.Name = "TaPa_XY2Cyl";
+            this.TaPa_XY2Cyl.Padding = new System.Windows.Forms.Padding(3);
+            this.TaPa_XY2Cyl.Size = new System.Drawing.Size(384, 288);
+            this.TaPa_XY2Cyl.TabIndex = 2;
+            this.TaPa_XY2Cyl.Text = "XY2Cyl";
+            this.TaPa_XY2Cyl.UseVisualStyleBackColor = true;
+            // 
+            // La_XY2Cyl_JoyButtonForEndTrigger
+            // 
+            this.La_XY2Cyl_JoyButtonForEndTrigger.AutoSize = true;
+            this.La_XY2Cyl_JoyButtonForEndTrigger.Location = new System.Drawing.Point(6, 209);
+            this.La_XY2Cyl_JoyButtonForEndTrigger.Name = "La_XY2Cyl_JoyButtonForEndTrigger";
+            this.La_XY2Cyl_JoyButtonForEndTrigger.Size = new System.Drawing.Size(133, 13);
+            this.La_XY2Cyl_JoyButtonForEndTrigger.TabIndex = 55;
+            this.La_XY2Cyl_JoyButtonForEndTrigger.Text = "Joy Button For End Trigger";
+            // 
+            // CoBo_XY2Cyl_JoyButtonForEndTrigger
+            // 
+            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.FormattingEnabled = true;
+            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.Location = new System.Drawing.Point(9, 232);
+            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.Name = "CoBo_XY2Cyl_JoyButtonForEndTrigger";
+            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.Size = new System.Drawing.Size(352, 21);
+            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.TabIndex = 54;
+            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.DropDown += new System.EventHandler(this.CoBo_XY2Cyl_JoyButtonForEndTrigger_DropDown);
+            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.DropDownClosed += new System.EventHandler(this.CoBo_XY2Cyl_JoyButtonForEndTrigger_DropDownClosed);
+            // 
+            // La_XY2Cyl_JoyAxisForMechSensitivity
+            // 
+            this.La_XY2Cyl_JoyAxisForMechSensitivity.AutoSize = true;
+            this.La_XY2Cyl_JoyAxisForMechSensitivity.Location = new System.Drawing.Point(5, 154);
+            this.La_XY2Cyl_JoyAxisForMechSensitivity.Name = "La_XY2Cyl_JoyAxisForMechSensitivity";
+            this.La_XY2Cyl_JoyAxisForMechSensitivity.Size = new System.Drawing.Size(143, 13);
+            this.La_XY2Cyl_JoyAxisForMechSensitivity.TabIndex = 52;
+            this.La_XY2Cyl_JoyAxisForMechSensitivity.Text = "Joy Axis For Mech Sensitivity";
+            // 
+            // CoBo_XY2Cyl_JoyAxisForMechSensitivity
+            // 
+            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.FormattingEnabled = true;
+            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.Location = new System.Drawing.Point(8, 177);
+            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.Name = "CoBo_XY2Cyl_JoyAxisForMechSensitivity";
+            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.Size = new System.Drawing.Size(355, 21);
+            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.TabIndex = 51;
+            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.DropDown += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechSensitivity_DropDown);
+            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.DropDownClosed += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechSensitivity_DropDownClosed);
+            // 
+            // La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect
+            // 
+            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.AutoSize = true;
+            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Location = new System.Drawing.Point(6, 106);
+            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Name = "La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect";
+            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Size = new System.Drawing.Size(207, 13);
+            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.TabIndex = 50;
+            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Text = "Joy Button For Mech Sythetic Noise Effect";
+            // 
+            // CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect
+            // 
+            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.FormattingEnabled = true;
+            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Location = new System.Drawing.Point(9, 129);
+            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Name = "CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect";
+            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Size = new System.Drawing.Size(355, 21);
+            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.TabIndex = 49;
+            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.DropDown += new System.EventHandler(this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect_DropDown);
+            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.DropDownClosed += new System.EventHandler(this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect_DropDownClosed);
+            // 
+            // La_XY2Cyl_JoyAxisForMechYAxisTilt
+            // 
+            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.AutoSize = true;
+            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.Location = new System.Drawing.Point(6, 59);
+            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.Name = "La_XY2Cyl_JoyAxisForMechYAxisTilt";
+            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.Size = new System.Drawing.Size(142, 13);
+            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.TabIndex = 48;
+            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.Text = "Joy Axis For Mech Y Axis Tilt";
+            // 
+            // CoBo_XY2Cyl_JoyAxisForMechYAxisTilt
+            // 
+            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.FormattingEnabled = true;
+            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.Location = new System.Drawing.Point(9, 75);
+            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.Name = "CoBo_XY2Cyl_JoyAxisForMechYAxisTilt";
+            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.Size = new System.Drawing.Size(355, 21);
+            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.TabIndex = 47;
+            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.DropDown += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt_DropDown);
+            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.DropDownClosed += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt_DropDownClosed);
+            // 
+            // La_XY2Cyl_JoyAxisForMechXAxisTilt
+            // 
+            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.AutoSize = true;
+            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Location = new System.Drawing.Point(6, 10);
+            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Name = "La_XY2Cyl_JoyAxisForMechXAxisTilt";
+            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Size = new System.Drawing.Size(142, 13);
+            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.TabIndex = 46;
+            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Text = "Joy Axis For Mech X Axis Tilt";
+            // 
+            // CoBo_XY2Cyl_JoyAxisForMechXAxisTilt
+            // 
+            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.FormattingEnabled = true;
+            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.Location = new System.Drawing.Point(9, 33);
+            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.Name = "CoBo_XY2Cyl_JoyAxisForMechXAxisTilt";
+            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.Size = new System.Drawing.Size(355, 21);
+            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.TabIndex = 45;
+            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.DropDown += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt_DropDown);
+            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.DropDownClosed += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt_DropDownClosed);
             // 
             // TaPa_XYZ3Cyl
             // 
@@ -1190,217 +1408,6 @@
             this.CoBo_JoyAxisForMechXAxisTilt.DropDown += new System.EventHandler(this.CoBo_JoyAxisForMechXAxisTilt_DropDown);
             this.CoBo_JoyAxisForMechXAxisTilt.DropDownClosed += new System.EventHandler(this.CoBo_JoyAxisForMechXAxisTilt_DropDownClosed);
             // 
-            // TaPa_X1Cyl
-            // 
-            this.TaPa_X1Cyl.Controls.Add(this.La_X1Cyl_JoyButtonForEndTrigger);
-            this.TaPa_X1Cyl.Controls.Add(this.CoBo_X1Cyl_JoyButtonForEndTrigger);
-            this.TaPa_X1Cyl.Controls.Add(this.La_X1Cyl_JoyAxisForMechSensitivity);
-            this.TaPa_X1Cyl.Controls.Add(this.CoBo_X1Cyl_JoyAxisForMechSensitivity);
-            this.TaPa_X1Cyl.Controls.Add(this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect);
-            this.TaPa_X1Cyl.Controls.Add(this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect);
-            this.TaPa_X1Cyl.Controls.Add(this.La_X1Cyl_JoyAxisForMechXAxisTilt);
-            this.TaPa_X1Cyl.Controls.Add(this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt);
-            this.TaPa_X1Cyl.Location = new System.Drawing.Point(4, 22);
-            this.TaPa_X1Cyl.Name = "TaPa_X1Cyl";
-            this.TaPa_X1Cyl.Size = new System.Drawing.Size(384, 288);
-            this.TaPa_X1Cyl.TabIndex = 1;
-            this.TaPa_X1Cyl.Text = "X1Cyl";
-            this.TaPa_X1Cyl.UseVisualStyleBackColor = true;
-            // 
-            // La_X1Cyl_JoyButtonForEndTrigger
-            // 
-            this.La_X1Cyl_JoyButtonForEndTrigger.AutoSize = true;
-            this.La_X1Cyl_JoyButtonForEndTrigger.Location = new System.Drawing.Point(3, 174);
-            this.La_X1Cyl_JoyButtonForEndTrigger.Name = "La_X1Cyl_JoyButtonForEndTrigger";
-            this.La_X1Cyl_JoyButtonForEndTrigger.Size = new System.Drawing.Size(133, 13);
-            this.La_X1Cyl_JoyButtonForEndTrigger.TabIndex = 53;
-            this.La_X1Cyl_JoyButtonForEndTrigger.Text = "Joy Button For End Trigger";
-            // 
-            // CoBo_X1Cyl_JoyButtonForEndTrigger
-            // 
-            this.CoBo_X1Cyl_JoyButtonForEndTrigger.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoBo_X1Cyl_JoyButtonForEndTrigger.FormattingEnabled = true;
-            this.CoBo_X1Cyl_JoyButtonForEndTrigger.Location = new System.Drawing.Point(6, 197);
-            this.CoBo_X1Cyl_JoyButtonForEndTrigger.Name = "CoBo_X1Cyl_JoyButtonForEndTrigger";
-            this.CoBo_X1Cyl_JoyButtonForEndTrigger.Size = new System.Drawing.Size(352, 21);
-            this.CoBo_X1Cyl_JoyButtonForEndTrigger.TabIndex = 52;
-            // 
-            // La_X1Cyl_JoyAxisForMechSensitivity
-            // 
-            this.La_X1Cyl_JoyAxisForMechSensitivity.AutoSize = true;
-            this.La_X1Cyl_JoyAxisForMechSensitivity.Location = new System.Drawing.Point(3, 113);
-            this.La_X1Cyl_JoyAxisForMechSensitivity.Name = "La_X1Cyl_JoyAxisForMechSensitivity";
-            this.La_X1Cyl_JoyAxisForMechSensitivity.Size = new System.Drawing.Size(143, 13);
-            this.La_X1Cyl_JoyAxisForMechSensitivity.TabIndex = 50;
-            this.La_X1Cyl_JoyAxisForMechSensitivity.Text = "Joy Axis For Mech Sensitivity";
-            // 
-            // CoBo_X1Cyl_JoyAxisForMechSensitivity
-            // 
-            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.FormattingEnabled = true;
-            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.Location = new System.Drawing.Point(6, 136);
-            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.Name = "CoBo_X1Cyl_JoyAxisForMechSensitivity";
-            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.Size = new System.Drawing.Size(355, 21);
-            this.CoBo_X1Cyl_JoyAxisForMechSensitivity.TabIndex = 49;
-            // 
-            // La_X1Cyl_JoyButtonForMechSytheticNoiseEffect
-            // 
-            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.AutoSize = true;
-            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Location = new System.Drawing.Point(3, 62);
-            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Name = "La_X1Cyl_JoyButtonForMechSytheticNoiseEffect";
-            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Size = new System.Drawing.Size(207, 13);
-            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.TabIndex = 48;
-            this.La_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Text = "Joy Button For Mech Sythetic Noise Effect";
-            // 
-            // CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect
-            // 
-            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.FormattingEnabled = true;
-            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Location = new System.Drawing.Point(6, 85);
-            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Name = "CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect";
-            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.Size = new System.Drawing.Size(355, 21);
-            this.CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect.TabIndex = 47;
-            // 
-            // La_X1Cyl_JoyAxisForMechXAxisTilt
-            // 
-            this.La_X1Cyl_JoyAxisForMechXAxisTilt.AutoSize = true;
-            this.La_X1Cyl_JoyAxisForMechXAxisTilt.Location = new System.Drawing.Point(3, 6);
-            this.La_X1Cyl_JoyAxisForMechXAxisTilt.Name = "La_X1Cyl_JoyAxisForMechXAxisTilt";
-            this.La_X1Cyl_JoyAxisForMechXAxisTilt.Size = new System.Drawing.Size(142, 13);
-            this.La_X1Cyl_JoyAxisForMechXAxisTilt.TabIndex = 44;
-            this.La_X1Cyl_JoyAxisForMechXAxisTilt.Text = "Joy Axis For Mech X Axis Tilt";
-            // 
-            // CoBo_X1Cyl_JoyAxisForMechXAxisTilt
-            // 
-            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.FormattingEnabled = true;
-            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.Location = new System.Drawing.Point(6, 29);
-            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.Name = "CoBo_X1Cyl_JoyAxisForMechXAxisTilt";
-            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.Size = new System.Drawing.Size(355, 21);
-            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.TabIndex = 43;
-            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.DropDown += new System.EventHandler(this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt_DropDown);
-            this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt.DropDownClosed += new System.EventHandler(this.CoBo_X1Cyl_JoyAxisForMechXAxisTilt_DropDownClosed);
-            // 
-            // TaPa_XY2Cyl
-            // 
-            this.TaPa_XY2Cyl.Controls.Add(this.La_XY2Cyl_JoyButtonForEndTrigger);
-            this.TaPa_XY2Cyl.Controls.Add(this.CoBo_XY2Cyl_JoyButtonForEndTrigger);
-            this.TaPa_XY2Cyl.Controls.Add(this.La_XY2Cyl_JoyAxisForMechSensitivity);
-            this.TaPa_XY2Cyl.Controls.Add(this.CoBo_XY2Cyl_JoyAxisForMechSensitivity);
-            this.TaPa_XY2Cyl.Controls.Add(this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect);
-            this.TaPa_XY2Cyl.Controls.Add(this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect);
-            this.TaPa_XY2Cyl.Controls.Add(this.La_XY2Cyl_JoyAxisForMechYAxisTilt);
-            this.TaPa_XY2Cyl.Controls.Add(this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt);
-            this.TaPa_XY2Cyl.Controls.Add(this.La_XY2Cyl_JoyAxisForMechXAxisTilt);
-            this.TaPa_XY2Cyl.Controls.Add(this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt);
-            this.TaPa_XY2Cyl.Location = new System.Drawing.Point(4, 22);
-            this.TaPa_XY2Cyl.Name = "TaPa_XY2Cyl";
-            this.TaPa_XY2Cyl.Padding = new System.Windows.Forms.Padding(3);
-            this.TaPa_XY2Cyl.Size = new System.Drawing.Size(384, 288);
-            this.TaPa_XY2Cyl.TabIndex = 2;
-            this.TaPa_XY2Cyl.Text = "XY2Cyl";
-            this.TaPa_XY2Cyl.UseVisualStyleBackColor = true;
-            // 
-            // La_XY2Cyl_JoyButtonForEndTrigger
-            // 
-            this.La_XY2Cyl_JoyButtonForEndTrigger.AutoSize = true;
-            this.La_XY2Cyl_JoyButtonForEndTrigger.Location = new System.Drawing.Point(6, 209);
-            this.La_XY2Cyl_JoyButtonForEndTrigger.Name = "La_XY2Cyl_JoyButtonForEndTrigger";
-            this.La_XY2Cyl_JoyButtonForEndTrigger.Size = new System.Drawing.Size(133, 13);
-            this.La_XY2Cyl_JoyButtonForEndTrigger.TabIndex = 55;
-            this.La_XY2Cyl_JoyButtonForEndTrigger.Text = "Joy Button For End Trigger";
-            // 
-            // CoBo_XY2Cyl_JoyButtonForEndTrigger
-            // 
-            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.FormattingEnabled = true;
-            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.Location = new System.Drawing.Point(9, 232);
-            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.Name = "CoBo_XY2Cyl_JoyButtonForEndTrigger";
-            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.Size = new System.Drawing.Size(352, 21);
-            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.TabIndex = 54;
-            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.DropDown += new System.EventHandler(this.CoBo_XY2Cyl_JoyButtonForEndTrigger_DropDown);
-            this.CoBo_XY2Cyl_JoyButtonForEndTrigger.DropDownClosed += new System.EventHandler(this.CoBo_XY2Cyl_JoyButtonForEndTrigger_DropDownClosed);
-            // 
-            // La_XY2Cyl_JoyAxisForMechSensitivity
-            // 
-            this.La_XY2Cyl_JoyAxisForMechSensitivity.AutoSize = true;
-            this.La_XY2Cyl_JoyAxisForMechSensitivity.Location = new System.Drawing.Point(5, 154);
-            this.La_XY2Cyl_JoyAxisForMechSensitivity.Name = "La_XY2Cyl_JoyAxisForMechSensitivity";
-            this.La_XY2Cyl_JoyAxisForMechSensitivity.Size = new System.Drawing.Size(143, 13);
-            this.La_XY2Cyl_JoyAxisForMechSensitivity.TabIndex = 52;
-            this.La_XY2Cyl_JoyAxisForMechSensitivity.Text = "Joy Axis For Mech Sensitivity";
-            // 
-            // CoBo_XY2Cyl_JoyAxisForMechSensitivity
-            // 
-            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.FormattingEnabled = true;
-            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.Location = new System.Drawing.Point(8, 177);
-            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.Name = "CoBo_XY2Cyl_JoyAxisForMechSensitivity";
-            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.Size = new System.Drawing.Size(355, 21);
-            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.TabIndex = 51;
-            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.DropDown += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechSensitivity_DropDown);
-            this.CoBo_XY2Cyl_JoyAxisForMechSensitivity.DropDownClosed += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechSensitivity_DropDownClosed);
-            // 
-            // La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect
-            // 
-            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.AutoSize = true;
-            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Location = new System.Drawing.Point(6, 106);
-            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Name = "La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect";
-            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Size = new System.Drawing.Size(207, 13);
-            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.TabIndex = 50;
-            this.La_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Text = "Joy Button For Mech Sythetic Noise Effect";
-            // 
-            // CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect
-            // 
-            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.FormattingEnabled = true;
-            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Location = new System.Drawing.Point(9, 129);
-            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Name = "CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect";
-            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.Size = new System.Drawing.Size(355, 21);
-            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.TabIndex = 49;
-            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.DropDown += new System.EventHandler(this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect_DropDown);
-            this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect.DropDownClosed += new System.EventHandler(this.CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect_DropDownClosed);
-            // 
-            // La_XY2Cyl_JoyAxisForMechYAxisTilt
-            // 
-            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.AutoSize = true;
-            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.Location = new System.Drawing.Point(6, 59);
-            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.Name = "La_XY2Cyl_JoyAxisForMechYAxisTilt";
-            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.Size = new System.Drawing.Size(142, 13);
-            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.TabIndex = 48;
-            this.La_XY2Cyl_JoyAxisForMechYAxisTilt.Text = "Joy Axis For Mech Y Axis Tilt";
-            // 
-            // CoBo_XY2Cyl_JoyAxisForMechYAxisTilt
-            // 
-            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.FormattingEnabled = true;
-            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.Location = new System.Drawing.Point(9, 82);
-            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.Name = "CoBo_XY2Cyl_JoyAxisForMechYAxisTilt";
-            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.Size = new System.Drawing.Size(355, 21);
-            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.TabIndex = 47;
-            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.DropDown += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt_DropDown);
-            this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt.DropDownClosed += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechYAxisTilt_DropDownClosed);
-            // 
-            // La_XY2Cyl_JoyAxisForMechXAxisTilt
-            // 
-            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.AutoSize = true;
-            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Location = new System.Drawing.Point(6, 10);
-            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Name = "La_XY2Cyl_JoyAxisForMechXAxisTilt";
-            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Size = new System.Drawing.Size(142, 13);
-            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.TabIndex = 46;
-            this.La_XY2Cyl_JoyAxisForMechXAxisTilt.Text = "Joy Axis For Mech X Axis Tilt";
-            // 
-            // CoBo_XY2Cyl_JoyAxisForMechXAxisTilt
-            // 
-            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.FormattingEnabled = true;
-            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.Location = new System.Drawing.Point(9, 33);
-            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.Name = "CoBo_XY2Cyl_JoyAxisForMechXAxisTilt";
-            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.Size = new System.Drawing.Size(355, 21);
-            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.TabIndex = 45;
-            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.DropDown += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt_DropDown);
-            this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt.DropDownClosed += new System.EventHandler(this.CoBo_XY2Cyl_JoyAxisForMechXAxisTilt_DropDownClosed);
-            // 
             // But_ProtocolConnectionStringHelp
             // 
             this.But_ProtocolConnectionStringHelp.Location = new System.Drawing.Point(238, 78);
@@ -1828,7 +1835,7 @@
             this.Controls.Add(this.GrBo_Joystick);
             this.MaximumSize = new System.Drawing.Size(10000, 10000);
             this.Name = "TaPa_XYCyl";
-            this.Text = "Form1";
+            this.Text = "           ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DaGrVi_Effects)).EndInit();
@@ -1842,12 +1849,12 @@
             this.GrBo_MotionData.ResumeLayout(false);
             this.GrBo_MotionData.PerformLayout();
             this.TaCo_MachinesSuportedForProtocol.ResumeLayout(false);
-            this.TaPa_XYZ3Cyl.ResumeLayout(false);
-            this.TaPa_XYZ3Cyl.PerformLayout();
             this.TaPa_X1Cyl.ResumeLayout(false);
             this.TaPa_X1Cyl.PerformLayout();
             this.TaPa_XY2Cyl.ResumeLayout(false);
             this.TaPa_XY2Cyl.PerformLayout();
+            this.TaPa_XYZ3Cyl.ResumeLayout(false);
+            this.TaPa_XYZ3Cyl.PerformLayout();
             this.GrBo_RunTime.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DaGrVi_DataOutput)).EndInit();
             this.GrBo_FrameData.ResumeLayout(false);
@@ -1885,7 +1892,7 @@
         private System.Windows.Forms.DataGridView DaGrVi_Buttons;
         private System.Windows.Forms.Label La_Axis;
         private System.Windows.Forms.Label La_Buttons;
-        private System.Windows.Forms.Timer JoyStickPollCycle;
+        private System.Windows.Forms.Timer Ti_JoyStickPollCycle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_AxisName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_AxisValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ButtonName;

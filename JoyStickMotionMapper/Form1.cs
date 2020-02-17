@@ -84,7 +84,7 @@ namespace JoyStickMotionMapper
                 CoBo_Protocol.Items.Add(Protocol);
             }
             LoadConfigFile($"{Environment.CurrentDirectory}{LastConfigName}", EnglishText.Exception_CantFindLastConfigException, true);
-            MotionController = new XYZ3CylMotionController(this);
+            MotionController = new X1CylMotionController(this);
             La_TimeBetweenTicksValue.Text = $"Value = {TrBa_TimeBetweenTicks.Value}";
             CheckForRunConditions();
         }
@@ -112,29 +112,6 @@ namespace JoyStickMotionMapper
             const string StartingButton = "Not Pressed";
             const int StartingPOV = -1;
 
-            if (MotionController.JoyStick != null)
-            {
-                JoyStickPollCycle.Enabled = false;
-                DeviceGUID = Guid.Empty;
-                MotionController.JoyStick.Unacquire();
-                MotionController.JoyStick.Dispose();
-                MotionController.ClearJoystickSelection();
-                EffectInfos = null;
-                AxisInfos = null;
-                ButtonInfos = null;
-                POVInfos = null;
-                TeBo_JoystickDevicesName.Text = "";
-                TeBo_JoystickDevicesGUID.Text = "";
-                TeBo_JoystickDeviceInstancesName.Text = "";
-                TeBo_JoystickDeviceInstancesGUID.Text = "";
-                TeBo_AxisCount.Text = "";
-                TeBo_ButtonCount.Text = "";
-                TeBo_POVCount.Text = "";
-                DaGrVi_Effects.Rows.Clear();
-                DaGrVi_Axis.Rows.Clear();
-                DaGrVi_Buttons.Rows.Clear();
-                DaGrVi_POVs.Rows.Clear();
-            }
             if (CoBo_JoyStickList.SelectedIndex != -1)
             {
                 DeviceGUID = Devices[CoBo_JoyStickList.SelectedIndex].InstanceGuid;
@@ -173,11 +150,32 @@ namespace JoyStickMotionMapper
                     DaGrVi_POVs.Rows.Add(POV.Name, StartingPOV);
                 }
 
-                JoyStickPollCycle.Enabled = true;
+                Ti_JoyStickPollCycle.Enabled = true;
                 TaCo_MachinesSuportedForProtocol.Enabled = true;
             }
             else
             {
+                Ti_JoyStickPollCycle.Enabled = false;
+                DeviceGUID = Guid.Empty;
+                MotionController?.JoyStick?.Unacquire();
+                MotionController?.JoyStick?.Dispose();
+                MotionController?.ClearJoystickSelection();
+                EffectInfos = null;
+                AxisInfos = null;
+                ButtonInfos = null;
+                POVInfos = null;
+                TeBo_JoystickDevicesName.Text = "";
+                TeBo_JoystickDevicesGUID.Text = "";
+                TeBo_JoystickDeviceInstancesName.Text = "";
+                TeBo_JoystickDeviceInstancesGUID.Text = "";
+                TeBo_AxisCount.Text = "";
+                TeBo_ButtonCount.Text = "";
+                TeBo_POVCount.Text = "";
+                DaGrVi_Effects.Rows.Clear();
+                DaGrVi_Axis.Rows.Clear();
+                DaGrVi_Buttons.Rows.Clear();
+                DaGrVi_POVs.Rows.Clear();
+
                 foreach (ComboBox DropDown in new ComboBox[] {
                     CoBo_JoyAxisForMechXAxisTilt,
                     CoBo_JoyAxisForMechYAxisTilt,
@@ -198,7 +196,16 @@ namespace JoyStickMotionMapper
                     CoBo_JoyButtonForMechSweepingLegs2StateTrigger,
                     CoBo_JoyButtonForMechVibrationStateTrigger,
                     CoBo_JoyButtonForMechWaterSprayStateTrigger,
-                    CoBo_JoyButtonForMechWindStateTrigger
+                    CoBo_JoyButtonForMechWindStateTrigger,
+                    CoBo_X1Cyl_JoyAxisForMechSensitivity,
+                    CoBo_X1Cyl_JoyAxisForMechXAxisTilt,
+                    CoBo_X1Cyl_JoyButtonForEndTrigger,
+                    CoBo_X1Cyl_JoyButtonForMechSytheticNoiseEffect,
+                    CoBo_XY2Cyl_JoyAxisForMechSensitivity,
+                    CoBo_XY2Cyl_JoyAxisForMechXAxisTilt,
+                    CoBo_XY2Cyl_JoyAxisForMechYAxisTilt,
+                    CoBo_XY2Cyl_JoyButtonForEndTrigger,
+                    CoBo_XY2Cyl_JoyButtonForMechSytheticNoiseEffect
                 })
                 {
                     DropDown.SelectedIndex = -1;
@@ -208,7 +215,7 @@ namespace JoyStickMotionMapper
             CheckForRunConditions();
         }
 
-        private void JoyStickPollCycle_Tick(object sender, EventArgs e)
+        private void Ti_JoyStickPollCycle_Tick(object sender, EventArgs e)
         {
             const int ButtonsOffsetOffset = 24;
             const int POVOffsetOffset = 24;
@@ -216,28 +223,31 @@ namespace JoyStickMotionMapper
 
             if (!MotionController.Run)
             {
-                MotionController.JoyStick.Poll();
-                JoystickUpdate[] Data = MotionController.JoyStick.GetBufferedData();
+                MotionController?.JoyStick?.Poll();
+                JoystickUpdate[] Data = MotionController?.JoyStick?.GetBufferedData();
                 int Row = 0;
-                foreach (DeviceObjectInstance Axis in AxisInfos)
+                if (Data != null)
                 {
-                    if (Data.Any(x => x.RawOffset == Axis.Offset + OtherAxisOffsetOffset || x.RawOffset == Axis.Offset))
-                        DaGrVi_Axis.Rows[Row].Cells[1].Value = Data.Last(x => x.RawOffset == Axis.Offset + OtherAxisOffsetOffset || x.RawOffset == Axis.Offset).Value;
-                    Row++;
-                }
-                Row = 0;
-                foreach (DeviceObjectInstance POV in POVInfos)
-                {
-                    if (Data.Any(x => x.RawOffset == POV.Offset + POVOffsetOffset))
-                        DaGrVi_POVs.Rows[Row].Cells[1].Value = Data.Last(x => x.RawOffset == POV.Offset + POVOffsetOffset).Value;
-                    Row++;
-                }
-                Row = 0;
-                foreach (DeviceObjectInstance Button in ButtonInfos)
-                {
-                    if (Data.Any(x => x.RawOffset == Button.Offset + ButtonsOffsetOffset))
-                        DaGrVi_Buttons.Rows[Row].Cells[1].Value = Data.Last(x => x.RawOffset == Button.Offset + ButtonsOffsetOffset).Value != 0 ? "Pressed" : "Not Pressed";
-                    Row++;
+                    foreach (DeviceObjectInstance Axis in AxisInfos)
+                    {
+                        if (Data.Any(x => x.RawOffset == Axis.Offset + OtherAxisOffsetOffset || x.RawOffset == Axis.Offset))
+                            DaGrVi_Axis.Rows[Row].Cells[1].Value = Data.Last(x => x.RawOffset == Axis.Offset + OtherAxisOffsetOffset || x.RawOffset == Axis.Offset).Value;
+                        Row++;
+                    }
+                    Row = 0;
+                    foreach (DeviceObjectInstance POV in POVInfos)
+                    {
+                        if (Data.Any(x => x.RawOffset == POV.Offset + POVOffsetOffset))
+                            DaGrVi_POVs.Rows[Row].Cells[1].Value = Data.Last(x => x.RawOffset == POV.Offset + POVOffsetOffset).Value;
+                        Row++;
+                    }
+                    Row = 0;
+                    foreach (DeviceObjectInstance Button in ButtonInfos)
+                    {
+                        if (Data.Any(x => x.RawOffset == Button.Offset + ButtonsOffsetOffset))
+                            DaGrVi_Buttons.Rows[Row].Cells[1].Value = Data.Last(x => x.RawOffset == Button.Offset + ButtonsOffsetOffset).Value != 0 ? "Pressed" : "Not Pressed";
+                        Row++;
+                    }
                 }
             }
             else
@@ -760,7 +770,7 @@ namespace JoyStickMotionMapper
 
         private void Bu_Run_Click(object sender, EventArgs e)
         {
-            JoyStickPollCycle.Stop();
+            Ti_JoyStickPollCycle.Stop();
 
             if (!MotionController.Run)
             {
@@ -782,7 +792,7 @@ namespace JoyStickMotionMapper
                 MotionController.Start();
                 Bu_Run.Enabled = true;
 
-                JoyStickPollCycle.Start();
+                Ti_JoyStickPollCycle.Start();
             }
             else
             {
@@ -815,7 +825,7 @@ namespace JoyStickMotionMapper
 
                 Bu_Run.Enabled = true;
                 Bu_PlayBackSavedData.Enabled = true;
-                JoyStickPollCycle.Start();
+                Ti_JoyStickPollCycle.Start();
             }
         }
 
@@ -1087,15 +1097,18 @@ namespace JoyStickMotionMapper
 
                             try
                             {
-                                if (TaCo_MachinesSuportedForProtocol.SelectedIndex == 1)
-
-                                    Player = new XYZ3CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
-
-                                else if (TaCo_MachinesSuportedForProtocol.SelectedIndex == 2)
-                                    Player = new X1CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
-
-                                else
-                                    Player = new XY2CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
+                                switch (TaCo_MachinesSuportedForProtocol.SelectedIndex)
+                                {
+                                    case 0:
+                                        Player = new X1CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
+                                        break;
+                                    case 1:
+                                        Player = new XY2CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
+                                        break;
+                                    case 2:
+                                        Player = new XYZ3CylMotionPlayer(this, GamePathDialog.FileName, TeBo_GamePath.Text, TeBo_StartOptionsRunArgs.Text, TeBo_RuntimeProcess.Text, TeBo_StartOptionsInput.Text, (AvalibleProtocols)CoBo_Protocol.SelectedIndex, TeBo_ProtocolConnectionString.Text);
+                                        break;
+                                }
                             }
                             catch (Exception ex)
                             {
@@ -1148,11 +1161,38 @@ namespace JoyStickMotionMapper
 
         private void TaCo_MachinesSuportedForProtocol_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TaCo_MachinesSuportedForProtocol.SelectedIndex == 0)
-                MotionController = new XYZ3CylMotionController(this);
-            if (TaCo_MachinesSuportedForProtocol.SelectedIndex == 1)
-                MotionController = new XYZ3CylMotionController(this);
-
+            bool TickInProgress = false;
+            if(TaCo_MachinesSuportedForProtocol.SelectedIndex != -1)
+            {
+                if (Ti_JoyStickPollCycle.Enabled == true)
+                    TickInProgress = true;
+                if(TickInProgress)
+                    Ti_JoyStickPollCycle.Enabled = false;
+                switch(TaCo_MachinesSuportedForProtocol.SelectedIndex)
+                {
+                    case 0:
+                        MotionController = new X1CylMotionController(this);
+                        CoBo_JoyStickList.SelectedIndex = -1;
+                        CoBo_JoyStickList_DropDownClosed(sender, e);
+                        break;
+                    case 1:
+                        MotionController = new XY2CylMotionController(this);
+                        CoBo_JoyStickList.SelectedIndex = -1;
+                        CoBo_JoyStickList_DropDownClosed(sender, e);
+                        break;
+                    case 2:
+                        MotionController = new XYZ3CylMotionController(this);
+                        CoBo_JoyStickList.SelectedIndex = -1;
+                        CoBo_JoyStickList_DropDownClosed(sender, e);
+                        break;
+                }
+                if(TickInProgress)
+                    Ti_JoyStickPollCycle.Enabled = true;
+            }
+            else
+            {
+                TaCo_MachinesSuportedForProtocol.SelectedIndex = 0;
+            }
         }
 
         private void CoBo_X1Cyl_JoyAxisForMechXAxisTilt_DropDown(object sender, EventArgs e)
@@ -1244,7 +1284,6 @@ namespace JoyStickMotionMapper
         {
             SelectDeviceInfo(CoBo_XY2Cyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);
         }
-
     } 
 }
 

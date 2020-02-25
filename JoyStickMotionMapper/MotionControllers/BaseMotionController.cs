@@ -15,6 +15,11 @@ namespace JoyStickMotionMapper.MotionControllers
 {
     abstract class BaseMotionController
     {
+        protected byte MaxTravel = 255;
+        protected byte MinTravel = 0;
+        protected byte MidWay = 127;
+
+
         protected Random RandomNumber = new Random();
 
         internal bool AddSytheticNoiseEffect = false;
@@ -290,19 +295,19 @@ namespace JoyStickMotionMapper.MotionControllers
 
         protected virtual byte ClampCast(int Value)
         {
-            if (Value < 0)
-                return 0;
-            if (Value > 255)
-                return 255;
+            if (Value < MinTravel)
+                return MinTravel;
+            if (Value > MaxTravel)
+                return MaxTravel;
             return Convert.ToByte(Value);
         }
 
         protected virtual byte ClampCast(float Value)
         {
-            if (Value < 0)
-                return 0;
-            if (Value > 255)
-                return 255;
+            if (Value < MinTravel)
+                return MinTravel;
+            if (Value > MaxTravel)
+                return MaxTravel;
             return Convert.ToByte(Value);
         }
 

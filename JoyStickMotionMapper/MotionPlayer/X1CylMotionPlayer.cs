@@ -14,7 +14,7 @@ namespace JoyStickMotionMapper.MotionPlayer
 
         protected override void AnimateFame(MomentaryPositionAndTimingFrameDataModel Data)
         {
-            MotionHardwareInterface.SetCylinderHeight(0, Data.C1);
+            MotionHardwareInterface.SetCylinderHeight(1, Data.C1);
         }
     }
 }

@@ -62,12 +62,12 @@ namespace JoyStickMotionMapper.MotionControllers
 
         protected override void SetCylinders()
         {
-            MotionHardwareInterface.SetCylinderHeight(0, (byte)Cylinder1);
+            MotionHardwareInterface.SetCylinderHeight(1, (byte)Cylinder1);
         }
 
         protected override void SetCylinders(MomentaryPositionAndTimingFrameDataModel DataFrame)
         {
-            MotionHardwareInterface.SetCylinderHeight(0, DataFrame.C1);
+            MotionHardwareInterface.SetCylinderHeight(1, DataFrame.C1);
         }
 
         protected override void ResetCylinders()

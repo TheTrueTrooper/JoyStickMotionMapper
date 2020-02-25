@@ -65,6 +65,7 @@
     <Compile Include="ConfigHelper\SystemConfig.cs" />
     <Compile Include="ComMotionSystem\JMDM_CylinderPortControlUpdated.cs" />
     <Compile Include="MotionControllers\BaseMotionController.cs" />
+    <Compile Include="MotionControllers\ParachuteMotionController.cs" />
     <Compile Include="MotionControllers\XY2CylMotionController.cs" />
     <Compile Include="MotionControllers\X1CylMotionController.cs" />
     <Compile Include="MotionControllers\XYZ3CylMotionController.cs" />

@@ -68,7 +68,14 @@ namespace JoyStickMotionMapper.MotionControllers
         }
 
         internal XYZ3CylMotionController(TaPa_XYCyl Owner) : base(Owner)
-        { }
+        {
+            MaxTravel = 210;
+            MinTravel = 0;
+            MidWay = (byte)(((MaxTravel - MinTravel) / 2) + MinTravel);
+            Cylinder1 = MidWay;
+            Cylinder2 = MidWay;
+            Cylinder3 = MidWay;
+        }
 
         internal override void Start()
         {
@@ -100,23 +107,27 @@ namespace JoyStickMotionMapper.MotionControllers
 
         protected override void SetCylinders()
         {
-            MotionHardwareInterface.SetCylinderHeight(0, (byte)Cylinder1);
-            MotionHardwareInterface.SetCylinderHeight(1, (byte)Cylinder2);
-            MotionHardwareInterface.SetCylinderHeight(2, (byte)Cylinder3);
+            MotionHardwareInterface.SetCylinderHeight(1, (byte)Cylinder1);
+            MotionHardwareInterface.SetCylinderHeight(2, (byte)Cylinder2);
+            MotionHardwareInterface.SetCylinderHeight(3, (byte)Cylinder3);
         }
 
         protected override void SetCylinders(MomentaryPositionAndTimingFrameDataModel DataFrame)
         {
-            MotionHardwareInterface.SetCylinderHeight(0, DataFrame.C1);
-            MotionHardwareInterface.SetCylinderHeight(1, DataFrame.C2);
-            MotionHardwareInterface.SetCylinderHeight(2, DataFrame.C3);
+            MotionHardwareInterface.SetCylinderHeight(1, DataFrame.C1);
+            MotionHardwareInterface.SetCylinderHeight(2, DataFrame.C2);
+            MotionHardwareInterface.SetCylinderHeight(3, DataFrame.C3);
+            //byte test = 0;
+            //MotionHardwareInterface.SetCylinderHeight(1, test);
+            //MotionHardwareInterface.SetCylinderHeight(2, test);
+            //MotionHardwareInterface.SetCylinderHeight(3, test);
         }
 
         protected override void ResetCylinders()
         {
-            Cylinder1 = 127;
-            Cylinder2 = 127;
-            Cylinder3 = 127;
+            Cylinder1 = MidWay;
+            Cylinder2 = MidWay;
+            Cylinder3 = MidWay;
             SetCylinders();
         }
 
@@ -193,9 +204,9 @@ namespace JoyStickMotionMapper.MotionControllers
 
         void MoveForXY(float XAxis, float YAxis, byte Sensitivity)
         {
-            Cylinder1 = ClampCast(Cylinder1 + (0 * Sensitivity * YAxis) + (-1 * Sensitivity * XAxis));
-            Cylinder2 = ClampCast(Cylinder2 + (Sensitivity * YAxis) + (Sensitivity * XAxis));
-            Cylinder3 = ClampCast(Cylinder3 + (-1 * Sensitivity * YAxis) + (Sensitivity * XAxis));
+            Cylinder1 = ClampCast(Cylinder1 + (Sensitivity * YAxis) + (Sensitivity * XAxis));
+            Cylinder2 = ClampCast(Cylinder2 + (-1 * Sensitivity * YAxis) + (Sensitivity * XAxis));
+            Cylinder3 = ClampCast(Cylinder3 + (0 * Sensitivity * YAxis) + (-1*Sensitivity * XAxis));
         }
     }
 }

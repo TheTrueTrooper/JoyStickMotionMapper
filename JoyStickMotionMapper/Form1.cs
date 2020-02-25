@@ -1176,21 +1176,31 @@ namespace JoyStickMotionMapper
                     TickInProgress = true;
                 if(TickInProgress)
                     Ti_JoyStickPollCycle.Enabled = false;
-                switch(TaCo_MachinesSuportedForProtocol.SelectedIndex)
+                int SelectedIndex;
+                switch (TaCo_MachinesSuportedForProtocol.SelectedIndex)
                 {
                     case 0:
                         MotionController = new X1CylMotionController(this);
+                        SelectedIndex = CoBo_JoyStickList.SelectedIndex;
                         CoBo_JoyStickList.SelectedIndex = -1;
+                        CoBo_JoyStickList_DropDownClosed(sender, e);
+                        CoBo_JoyStickList.SelectedIndex = SelectedIndex;
                         CoBo_JoyStickList_DropDownClosed(sender, e);
                         break;
                     case 1:
                         MotionController = new XY2CylMotionController(this);
+                        SelectedIndex = CoBo_JoyStickList.SelectedIndex;
                         CoBo_JoyStickList.SelectedIndex = -1;
+                        CoBo_JoyStickList_DropDownClosed(sender, e);
+                        CoBo_JoyStickList.SelectedIndex = SelectedIndex;
                         CoBo_JoyStickList_DropDownClosed(sender, e);
                         break;
                     case 2:
                         MotionController = new XYZ3CylMotionController(this);
+                        SelectedIndex = CoBo_JoyStickList.SelectedIndex;
                         CoBo_JoyStickList.SelectedIndex = -1;
+                        CoBo_JoyStickList_DropDownClosed(sender, e);
+                        CoBo_JoyStickList.SelectedIndex = SelectedIndex;
                         CoBo_JoyStickList_DropDownClosed(sender, e);
                         break;
                 }
@@ -1291,6 +1301,66 @@ namespace JoyStickMotionMapper
         private void CoBo_XY2Cyl_JoyButtonForEndTrigger_DropDownClosed(object sender, EventArgs e)
         {
             SelectButtonDeviceInfo(CoBo_XY2Cyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);
+        }
+
+        private void CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt_DropDown(object sender, EventArgs e)
+        {
+            AddAxisToComboBox(CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt);
+        }
+
+        private void CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectAxisDeviceInfo(CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt, ref MotionController.JoyAxisForMechXAxisTilt);
+        }
+
+        private void CoBo_ParachuteCyl_JoyAxisForMechYAxisTilt_DropDown(object sender, EventArgs e)
+        {
+            AddAxisToComboBox(CoBo_ParachuteCyl_JoyAxisForMechYAxisTilt);
+        }
+
+        private void CoBo_ParachuteCyl_JoyAxisForMechYAxisTilt_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectAxisDeviceInfo(CoBo_ParachuteCyl_JoyAxisForMechYAxisTilt, ref MotionController.JoyAxisForMechYAxisTilt);
+        }
+
+        private void CoBo_ParachuteCyl_JoyAxisForMechZAxisTilt_DropDown(object sender, EventArgs e)
+        {
+            AddAxisToComboBox(CoBo_ParachuteCyl_JoyAxisForMechZAxisTilt);
+        }
+
+        private void CoBo_ParachuteCyl_JoyAxisForMechZAxisTilt_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectAxisDeviceInfo(CoBo_ParachuteCyl_JoyAxisForMechZAxisTilt, ref MotionController.JoyAxisForMechYAxisTilt);
+        }
+
+        private void CoBo_ParachuteCyl_JoyAxisForMechSensitivity_DropDown(object sender, EventArgs e)
+        {
+            AddAxisToComboBox(CoBo_ParachuteCyl_JoyAxisForMechSensitivity);
+        }
+
+        private void CoBo_ParachuteCyl_JoyAxisForMechSensitivity_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectAxisDeviceInfo(CoBo_ParachuteCyl_JoyAxisForMechSensitivity, ref MotionController.JoyAxisForMechSensitivity);
+        }
+
+        private void CoBo_ParachuteCyl_JoyButtonForMechSytheticNoiseEffect_DropDown(object sender, EventArgs e)
+        {
+            AddButtonsToComboBox(CoBo_ParachuteCyl_JoyButtonForMechSytheticNoiseEffect);
+        }
+
+        private void CoBo_ParachuteCyl_JoyButtonForMechSytheticNoiseEffect_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectButtonDeviceInfo(CoBo_ParachuteCyl_JoyButtonForMechSytheticNoiseEffect, ref MotionController.JoyButtonForMechSytheticNoiseEffect);
+        }
+
+        private void CoBo_ParachuteCyl_JoyButtonForEndTrigger_DropDown(object sender, EventArgs e)
+        {
+            AddButtonsToComboBox(CoBo_ParachuteCyl_JoyButtonForEndTrigger);
+        }
+
+        private void CoBo_ParachuteCyl_JoyButtonForEndTrigger_DropDownClosed(object sender, EventArgs e)
+        {
+            SelectButtonDeviceInfo(CoBo_ParachuteCyl_JoyButtonForEndTrigger, ref MotionController.JoyButtonForEnd);
         }
     } 
 }

@@ -81,6 +81,7 @@ namespace JoyStickMotionMapper.MotionControllers
         internal int[] POVs;
         internal DeviceObjectInstance JoyAxisForMechXAxisTilt,
                     JoyAxisForMechYAxisTilt,
+                    JoyAxisForMechZAxisTilt,
                     JoyAxisForMechBaseHeight,
                     JoyAxisForMechSensitivity,
                     JoyButtonForMechBackStateTrigger,
@@ -125,6 +126,7 @@ namespace JoyStickMotionMapper.MotionControllers
                 this.JoyStick = JoyStick;
                 JoyAxisForMechXAxisTilt = null;
                 JoyAxisForMechYAxisTilt = null;
+                JoyAxisForMechZAxisTilt = null;
                 JoyAxisForMechBaseHeight = null;
                 JoyAxisForMechSensitivity = null;
                 JoyButtonForMechBackStateTrigger = null;
@@ -171,6 +173,7 @@ namespace JoyStickMotionMapper.MotionControllers
                 JoyStick = null;
                 JoyAxisForMechXAxisTilt = null;
                 JoyAxisForMechYAxisTilt = null;
+                JoyAxisForMechZAxisTilt = null;
                 JoyAxisForMechBaseHeight = null;
                 JoyAxisForMechSensitivity = null;
                 JoyButtonForMechBackStateTrigger = null;

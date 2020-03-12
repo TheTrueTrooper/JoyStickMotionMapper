@@ -200,18 +200,15 @@ namespace JoyStickMotionMapper.MotionControllers
                 DataFrame.C3 = ClampCast(DataFrame.C3 + SytheticNoiseEffectBaseHalfValue - RandomNumber.Next(0, SytheticNoiseEffectBaseValue));
             }
 
-
             AddedMotion.Add(DataFrame);
             SetCylinders(DataFrame);
         }
 
         void MoveForXYZ(Vector Vector, byte Sensitivity)
         {
-            Cylinder1 = ClampCast(Cylinder1 + (Sensitivity * Vector.Y) + (Sensitivity * Vector.Z));
-            Cylinder2 = ClampCast(Cylinder2 + (-1 * Sensitivity * Vector.Y) + (Sensitivity * Vector.Z));
+            Cylinder1 = ClampCast(Cylinder1 + (-1 * Sensitivity * Vector.Y) + (-1 * Sensitivity * Vector.Z));
+            Cylinder2 = ClampCast(Cylinder2 + (Sensitivity * Vector.Y) + (-1 * Sensitivity * Vector.Z));
             Cylinder3 = ClampCast(Cylinder3 + (Sensitivity * Vector.X));
         }
-
-         
     }
 }

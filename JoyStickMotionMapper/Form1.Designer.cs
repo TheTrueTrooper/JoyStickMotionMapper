@@ -883,6 +883,8 @@
             this.CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt.Name = "CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt";
             this.CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt.Size = new System.Drawing.Size(355, 21);
             this.CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt.TabIndex = 54;
+            this.CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt.DropDown += new System.EventHandler(this.CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt_DropDown);
+            this.CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt.DropDownClosed += new System.EventHandler(this.CoBo_ParachuteCyl_JoyAxisForMechXAxisTilt_DropDownClosed);
             // 
             // TaPa_X1Cyl
             // 

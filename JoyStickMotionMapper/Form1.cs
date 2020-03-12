@@ -1203,6 +1203,14 @@ namespace JoyStickMotionMapper
                         CoBo_JoyStickList.SelectedIndex = SelectedIndex;
                         CoBo_JoyStickList_DropDownClosed(sender, e);
                         break;
+                    case 3:
+                        MotionController = new ParachuteMotionController(this);
+                        SelectedIndex = CoBo_JoyStickList.SelectedIndex;
+                        CoBo_JoyStickList.SelectedIndex = -1;
+                        CoBo_JoyStickList_DropDownClosed(sender, e);
+                        CoBo_JoyStickList.SelectedIndex = SelectedIndex;
+                        CoBo_JoyStickList_DropDownClosed(sender, e);
+                        break;
                 }
                 if(TickInProgress)
                     Ti_JoyStickPollCycle.Enabled = true;
@@ -1330,7 +1338,7 @@ namespace JoyStickMotionMapper
 
         private void CoBo_ParachuteCyl_JoyAxisForMechZAxisTilt_DropDownClosed(object sender, EventArgs e)
         {
-            SelectAxisDeviceInfo(CoBo_ParachuteCyl_JoyAxisForMechZAxisTilt, ref MotionController.JoyAxisForMechYAxisTilt);
+            SelectAxisDeviceInfo(CoBo_ParachuteCyl_JoyAxisForMechZAxisTilt, ref MotionController.JoyAxisForMechZAxisTilt);
         }
 
         private void CoBo_ParachuteCyl_JoyAxisForMechSensitivity_DropDown(object sender, EventArgs e)

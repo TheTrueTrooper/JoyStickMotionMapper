@@ -71,6 +71,7 @@
     <Compile Include="MotionControllers\XYZ3CylMotionController.cs" />
     <Compile Include="MotionHardwareInterface\IMotionHardwareInterface.cs" />
     <Compile Include="MotionPlayer\BaseMotionPlayer.cs" />
+    <Compile Include="MotionPlayer\ParachuteMotionPlayer.cs" />
     <Compile Include="MotionPlayer\XY2CylMotionPlayer.cs" />
     <Compile Include="MotionPlayer\X1CylMotionPlayer.cs" />
     <Compile Include="MotionPlayer\XYZ3CylMotionPlayer.cs" />

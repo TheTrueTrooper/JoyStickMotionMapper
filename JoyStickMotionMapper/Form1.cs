@@ -67,6 +67,8 @@ namespace JoyStickMotionMapper
         BaseMotionPlayer Player;
         #endregion
 
+
+        
         string RunErrors;
 
         public TaPa_XYCyl()
@@ -99,6 +101,7 @@ namespace JoyStickMotionMapper
         private void CoBo_JoyStickList_DropDown(object sender, EventArgs e)
         {
             Devices = DirectInputDriversInfo.GetDevices(DeviceType.Joystick, DeviceEnumerationFlags.AttachedOnly).ToArray();
+            //Devices = DirectInputDriversInfo.GetDevices(DeviceType.Gamepad, DeviceEnumerationFlags.AttachedOnly).ToArray();
 
             CoBo_JoyStickList.Items.Clear();
 
